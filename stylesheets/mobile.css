@@ -1,0 +1,143 @@
+/* --------------------------------------------------
+	:: Grid
+	-------------------------------------------------- */
+	
+	/* Tablet screens */
+	@media (max-width: 1600px) {
+		.row .six.columns { width: 100%; }
+		body {  min-width: 0; margin-left: 0px; margin-right: 0px; padding-left: 0px; padding-right: 0px; }
+		
+	}
+	
+	
+	/* Mobile */
+	@media (max-width: 30em) {
+		body { -webkit-text-size-adjust: none; }
+		
+		.row, body, .container, .container.obsah { width: 100%; min-width: 0; margin-left: 0px; margin-right: 0px; padding-left: 0px; padding-right: 0px; }
+		.row .row .column, .row .row .columns { padding: 0; }
+		.column, .columns { width: auto !important; float: none; margin-left: 0px; margin-right: 0px; padding-left: 10px; padding-right: 10px;}
+		.column:last-child, .columns:last-child { margin-right: 0px; }
+		.offset-by-one, .offset-by-two, .offset-by-three, .offset-by-four, .offset-by-five, .offset-by-six, .offset-by-seven, .offset-by-eight, .offset-by-nine, .offset-by-ten, .offset-by-eleven { margin-left: 0% !important; }
+	}
+	
+	
+/* --------------------------------------------------
+	:: Block Grids
+	-------------------------------------------------- */	
+	
+	@media (max-width: 30em) {
+		.block-grid.mobile li { float: none; width: 100%; }
+	}
+	
+	
+
+/* -------------------------------------------------- 
+	:: Mobile Visibility Affordances
+---------------------------------------------------*/
+	
+	
+	.show-on-phones { display: none !important; }	
+	.show-on-tablets { display: none !important; }
+	.show-on-desktops { display: block; }
+	
+	.hide-on-phones { display: block !important; }	
+	.hide-on-tablets { display: block !important; }
+	.hide-on-desktops { display: none !important; }
+/*	
+	
+	@media (min-width: 49em), (device-width: 75em) {
+		.hide-on-phones { display: block !important; }
+		.hide-on-tablets { display: none !important; }
+		.hide-on-desktops { display: block !important; }
+		
+		.show-on-phones { display: none !important; }
+		.show-on-tablets { display: block !important; }
+		.show-on-desktops { display: none !important; }
+	}
+	
+	*/	
+	@media (max-width: 30em) {
+		.hide-on-phones { display: block !important; }
+		.hide-on-tablets { display: none !important; }
+		.hide-on-desktops { display: block !important; }
+		
+		.show-on-phones { display: block !important; }
+		.show-on-tablets { display: none !important; }
+		.show-on-desktops { display: none !important; }
+	}
+		@media (max-width: 360px) {
+		.hide-on-phones { display: none !important; }
+		.hide-on-tablets { display: none !important; }
+		.hide-on-desktops { display: block !important; }
+		
+		.show-on-phones { display: block !important; }
+		.show-on-tablets { display: none !important; }
+		.show-on-desktops { display: none !important; }
+	}
+	
+	
+/* -------------------------------------------------- 
+	:: Forms
+---------------------------------------------------*/	
+
+
+	@media (max-width: 30em) {
+		/*input.input-text, input.input-text.oversize, textarea,
+		form.nice input.input-text, form.nice input.input-text.oversize, form.nice textarea { display: block; width: 96%; padding: 6px 2% 4px; font-size: 18px; }*/
+		form.nice input.input-text, form.nice input.input-text.oversize, form.nice textarea { -webkit-border-radius: 2px; -moz-border-radius: 2px; }
+		form.nice small.error { padding: 6px 2%; display: block; }
+		form.nice .small + .error { width: auto; }
+		form.nice .medium + .error { width: auto; }
+		form.nice .large + .error { width: auto; }	
+	}
+	
+	
+/* -------------------------------------------------- 
+	:: UI
+---------------------------------------------------*/	
+	
+	/* Buttons */
+	@media (max-width: 30em) {
+		.button { display: block; }
+		button.button { width: 100%; padding-left: 0px; padding-right: 0px; }
+	}
+	
+	/* Tabs */
+	
+	@media (max-width: 30em) {
+		dl.tabs.mobile, dl.nice.tabs.mobile { width: auto; margin: 20px -20px 40px; height: auto; }
+		dl.tabs.mobile dt, dl.tabs.mobile dd, dl.nice.tabs.mobile dt, dl.nice.tabs.mobile dd { float: none; height: auto; }
+		
+	    dl.tabs.mobile dd a { display: block; width: auto; height: auto; padding: 18px 20px; line-height: 1; border: solid 0px #ccc; border-width: 1px 0px 0px; margin: 0; color: #555; background: #eee; font-size: 15px; font-size: 1.5rem; }
+		dl.tabs.mobile dd a.active { height: auto; margin: 0; border-width: 1px 0px 0px; }
+	
+		.nice.tabs.mobile { border-bottom: solid 1px #ccc; height: auto; }
+		.nice.tabs.mobile dd a { padding: 18px 20px; border: none; border-left: none; border-right: none; border-top: 1px solid #ccc; background: #fff; }
+		.nice.tabs.mobile dd a.active { border: none; background: #00a6fc; color: #fff; margin: 0; position: static; top: 0px; height: auto; }
+		.nice.tabs.mobile dd:first-child a.active { margin: 0; }
+		
+		dl.contained.mobile, dl.nice.contained.mobile { margin-bottom: 0px; }
+    	dl.contained.tabs.mobile dd a { padding: 18px 20px; }
+    	dl.nice.contained.tabs.mobile dd a { padding: 18px 20px; }
+	}
+	
+	/* navigace */
+	@media (max-width: 30em) {
+		
+		.nav-collapse dl {
+		  margin: 0;
+		  padding: 0;
+		  width: 100%;
+		  display: block;
+		  list-style: none;
+		}
+		
+		.nav-collapse dd{
+		  width: 100%;
+		  display: block;
+		}
+		/*header h1{padding: 0.7em 0 0.4em 0; float: none; width: 100%}
+		header dl{padding: 3.2em 0 0.4em 0; float: left; width: 100%;  }
+		*/
+	}

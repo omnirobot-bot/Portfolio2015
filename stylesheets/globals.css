@@ -1,0 +1,458 @@
+/* Arfully Masterminded by ZURB */
+
+/* -------------------------------------------------- 
+    Table of Contents
+-----------------------------------------------------
+:: Reset & Standards
+:: Typography
+:: Links
+:: Lists
+:: Mobile-Friendly Grid
+:: Tables
+:: Misc
+:: Block Grids
+*/
+
+
+/*	--------------------------------------------------
+	:: Global Reset & Standards
+	-------------------------------------------------- */
+	
+	/* 
+		Eric Meyer's CSS Reset
+		http://meyerweb.com/eric/tools/css/reset/ 
+		v2.0 | 20110126
+   		License: none (public domain)
+	*/
+	
+	html, body, div, span, applet, object, iframe,
+	h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+	a, abbr, acronym, address, big, cite, code,
+	del, dfn, em, img, ins, kbd, q, s, samp,
+	small, strike, strong, sub, sup, tt, var,
+	b, u, i, center,
+	dl, dt, dd, ol, ul, li,
+	fieldset, form, label, legend,
+	table, caption, tbody, tfoot, thead, tr, th, td,
+	article, aside, canvas, details, embed, 
+	figure, figcaption, footer, header, hgroup, 
+	menu, nav, output, ruby, section, summary,
+	time, mark, audio, video {
+		margin: 0;
+		padding: 0;
+		border: 0;
+		font: inherit;
+		vertical-align: baseline;
+	}
+	html {
+		font-size: 62.5%; 
+	}
+	/* HTML5 display-role reset for older browsers */
+	article, aside, details, figcaption, figure, 
+	footer, header, hgroup, menu, nav, section {
+		display: block;
+	}
+	body {
+		line-height: 1;
+	}
+	ol, ul {
+		list-style: none;
+	}
+	blockquote, q {
+		quotes: none;
+	}
+	blockquote:before, blockquote:after,
+	q:before, q:after {
+		content: '';
+		content: none;
+	}
+	table {
+		border-collapse: collapse;
+		border-spacing: 0;
+	}
+	
+	
+	
+	body { background: none #5290C1; font-family: "Armata", "Helvetica Neue", "HelveticaNeue", Helvetica, Arial, "Lucida Grande", sans-serif; font-size: 11px; line-height: 1.1em; color: #fff; position: relative; -webkit-font-smoothing: antialiased; }
+	
+	.pozadi{ 
+	min-height: 100%;
+	min-width: 768px;
+	width: 100%;
+	height: auto;
+	position: fixed;
+	top: 0;
+	left: 0;
+	z-index: -99999;
+	-webkit-user-select: none;
+	-khtml-user-select: none;
+	-moz-user-select: none;
+	-o-user-select: none;
+	user-select: none;
+	}
+	
+
+/*	--------------------------------------------------
+    :: Typography
+	-------------------------------------------------- */
+	h1, h2, h3, h4, h5, h6 { color: #999; /*font-weight: bold;*/ line-height: 1.7rem }
+	h1 a, h2 a, h3 a, h4 a, h5 a, h6 a { font-weight: inherit; }
+	h1 { font-size: 46px; font-size: 4.6rem; margin-bottom: 12px; margin: 0 auto;}
+	h2 { font-size: 35px; font-size: 3.5rem; margin-bottom: 9px; }
+	h3 { font-size: 15px; font-size: 1.5rem; margin-bottom: 2em;
+		padding-bottom:1em; color:#fff; text-transform: uppercase;
+		border-color: #fff;
+		background-image: linear-gradient(to right, white 50%, rgba(0,0,0,0) 0%);
+		background-position: bottom;
+		background-size: 5px 1px;
+		background-repeat: repeat-x;
+	}
+	h3 a, h3 a:hover { color:#fff;}
+	
+	h4 { font-size: 13px; font-size: 1.2rem;
+		margin: 0.4rem 0.8rem 0.2rem; color: rgba(255, 255, 255, 1);
+		
+	}
+	h5 { font-size: 11px; font-size: 1.1rem; font-weight: normal; margin: 0.6rem 1rem 0.1rem 0.8rem; color:rgba(255, 255, 255, 0.8);
+	border-top: 1px solid rgba(255,255,255,0.2); padding-top: 0.6rem;
+	}
+	h6 { font-size: 15px; font-size: 1.5rem; font-weight: normal; margin: 1.5em 0 0.8em 0;}
+	
+
+	
+	.bigmargin {margin: 4% 7%;}
+	.middlemargin {margin: 3% 3%;}
+	.smallmargin {margin: 2% 3%;}
+	.v1 {font-size: 43px; font-size: 4.3rem; margin-bottom: 0px;line-height: 4rem;}
+	.v2 {font-size: 30px; font-size: 3rem; line-height: 2.3rem;}
+	.v3 {font-size: 20px; font-size: 2rem; margin-bottom: 10px;line-height: 2.2rem;}
+	.box {background-color: #f9f9f7; 
+		padding: 1em 1.3em 2em 1.3em; 
+		  -webkit-box-shadow: 0px 3px 2px -2px #a3a3a3; 
+				  box-shadow: 0px 3px 2px -2px #a3a3a3; 
+				  border-radius: 5px; 
+				  border: 1px solid #e5e5e5 ;
+				  margin-bottom: 1em;
+			}
+	
+	
+	
+	
+	header h1{padding: 0.7em 0 0 0; max-width: 157px; margin: 0 auto;}
+
+		
+
+	.subheader { color: #777; font-weight: 300; margin-bottom: 24px; }
+
+	p { line-height: 1.5em; margin: 0.3em 0 0.5em 0; }
+	p img { margin: 0; }
+	p.lead { font-size: 18px; font-size: 1.8rem; line-height: 24px;  }
+	
+		/* Mobile */
+		
+		@media (max-width: 30em) {
+			body, p {  font-size: 15px; font-size: 1.5rem; line-height: 1.4; }
+			#ci h3, #web h3, #online h3  {padding-top: 6em;}
+		}
+		
+	
+			
+	em { font-style: italic; line-height: inherit; }
+	strong { font-weight: bold; line-height: inherit; }
+	small { font-size: 60%; line-height: inherit; }
+	
+	h1 small, h2 small, h3 small, h4 small, h5 small { color: #777; }
+	
+/*	Blockquotes  */
+	blockquote, blockquote p { line-height: 20px; color: #777; }
+	blockquote { margin: 0 0 18px; padding: 9px 20px 0 19px; border-left: 1px solid #ddd; }
+	blockquote cite { display: block; font-size: 12px; font-size: 1.2rem; color: #555; }
+	blockquote cite:before { content: "\2014 \0020"; }
+	blockquote cite a, blockquote cite a:visited { color: #555; }
+	
+	hr { border-style: solid; border-width: 0px 0px 1px 0; 
+		-moz-border-image: url(../images/rainbow.gif) 0 0 1 stretch; 
+		-webkit-border-image: url(../images/rainbow.gif) 0 0 1 stretch; 
+		-o-border-image: url(../images/rainbow.gif) 0 0 1 stretch; 
+		border-image: url(../images/rainbow.gif) 0 0 1 stretch; 
+		clear: both; 
+		margin: 12px 0 12px; 
+		height: 0; 
+	
+	}
+	hr.sedy {  border: 0; height: 0; border-top: 1px solid rgba(0, 0, 0, 0.1); border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+		-moz-border-image: none; 
+		-webkit-border-image: none; 
+		-o-border-image: none; 
+		border-image: none; 
+	
+	}
+	
+	abbr, acronym { text-transform: uppercase; font-size: 90%; color: #222; border-bottom: 1px solid #ddd; cursor: help; }
+	abbr { text-transform: none; }
+
+	/**
+ 	 * Print styles.
+	 *
+	 * Inlined to avoid required HTTP connection: www.phpied.com/delay-loading-your-print-css/
+	 * Credit to Paul Irish and HTML5 Boilerplate (html5boilerplate.com)
+	 */
+	@media print {
+	  * { background: transparent !important; color: black !important; text-shadow: none !important; filter:none !important;
+	  -ms-filter: none !important; } /* Black prints faster: sanbeiji.com/archives/953 */
+	  p a, p a:visited { color: #444 !important; text-decoration: underline; }
+	  p a[href]:after { content: " (" attr(href) ")"; }
+	  abbr[title]:after { content: " (" attr(title) ")"; }
+	  .ir a:after, a[href^="javascript:"]:after, a[href^="#"]:after { content: ""; }  /* Don't show links for images, or javascript/internal links */
+	  pre, blockquote { border: 1px solid #999; page-break-inside: avoid; }
+	  thead { display: table-header-group; } /* css-discuss.incutio.com/wiki/Printing_Tables */
+	  tr, img { page-break-inside: avoid; }
+	  @page { margin: 0.5cm; }
+	  p, h2, h3 { orphans: 3; widows: 3; }
+	  h2, h3{ page-break-after: avoid; }
+	}
+
+
+/*	--------------------------------------------------
+	:: Links
+	-------------------------------------------------- */
+	a { color: #3a83b3; text-decoration: none; outline: 0; line-height: inherit; }
+	a:hover { color: #000; }
+	p a, p a:visited { line-height: inherit; text-decoration: underline;}
+	
+
+/*	--------------------------------------------------
+	:: Lists
+	-------------------------------------------------- */
+	ul, ol { margin-bottom: 18px; }
+	ul { list-style: none outside; }
+	ol { list-style: decimal; }
+	ol, ul.square, ul.circle, ul.disc { margin-left: 30px; }
+	ul.square { list-style: square outside; }
+	ul.circle { list-style: circle outside; }
+	ul.disc { list-style: disc outside; }
+	ul ul, ol ol { margin: 4px 0 5px 30px; }
+	li { margin-bottom: 12px; }
+	ul.large li { line-height: 21px; }
+	
+	
+/* --------------------------------------------------
+	:: Grid
+	-------------------------------------------------- */
+
+	.container { padding: 0px 3rem; }
+	.container.obsah { padding: 0rem 3rem 3rem 3rem; }
+	
+	.row { width: 100%; max-width: 100%; margin: 0 auto; margin-bottom: 1.5em; }
+	/* To fix the grid into a certain size, set max-width to width */
+	.row .row { min-width: 0px; }
+	
+	.column, .columns { margin-left: 2%; float: left; min-height: 1px; position: relative; margin-bottom: 1rem; }
+	.column:first-child, .columns:first-child { margin-left: 0px; }
+	
+	.row .one.columns { width: 6.4%; }
+	.row .two.columns { width: 14.8%; }
+	.row .three.columns { width: 23.25%; }
+	.row .four.columns { width: 31.6%; }
+	.row .five.columns { width: 40%; }
+	.row .six.columns { width: 48.5%; }
+	.row .seven.columns { width: 56.9%; }
+	.row .eight.columns { width: 65.3%; }
+	.row .nine.columns { width: 73.75%; }
+	.row .ten.columns { width: 82.1%; }
+	.row .eleven.columns { width: 90.58%; }
+	.row .twelve.columns { width: 100%; }
+	
+		
+	.row .offset-by-one 	{ margin-left: 13.1%;  }
+	.row .offset-by-two 	{ margin-left: 21.8%;  }
+	.row .offset-by-three 	{ margin-left: 30.5%;  }
+	.row .offset-by-four 	{ margin-left: 39.2%;  }
+	.row .offset-by-five 	{ margin-left: 47.9%;  }
+	.row .offset-by-six 	{ margin-left: 56.6%;  }
+	.row .offset-by-seven 	{ margin-left: 65.3%;  }
+	.row .offset-by-eight 	{ margin-left: 74.0%;  }
+	.row .offset-by-nine 	{ margin-left: 82.7%;  }
+	.row .offset-by-ten 	{ margin-left: 91.4%;  }
+	/*.row .offset-by-eleven 	{ margin-left: 95.7%;  }*/
+	
+	.row .one.centered { margin-left: 47.9%; }
+	.row .two.centered { margin-left: 43.5%; }
+	.row .three.centered { margin-left: 39.2%; }
+	.row .four.centered { margin-left: 34.8%; }
+	.row .five.centered { margin-left: 30.5%; }
+	.row .six.centered { margin-left: 26.1%; }
+	.row .seven.centered { margin-left: 21.8%; }
+	.row .eight.centered { margin-left: 17.4%; }
+	.row .nine.centered { margin-left: 13.1%; }
+	.row .ten.centered { margin-left: 8.7%; }
+	.row .eleven.centered { margin-left: 4.3%; }
+
+	.row .offset-by-one:first-child 	{ margin-left: 8.7%;  }
+	.row .offset-by-two:first-child 	{ margin-left: 17.4%;  }
+	.row .offset-by-three:first-child 	{ margin-left: 26.1%;  }
+	.row .offset-by-four:first-child 	{ margin-left: 34.8%;  }
+	.row .offset-by-five:first-child 	{ margin-left: 43.5%;  }
+	.row .offset-by-six:first-child 	{ margin-left: 52.2%;  }
+	.row .offset-by-seven:first-child 	{ margin-left: 60.9%;  }
+	.row .offset-by-eight:first-child 	{ margin-left: 69.6%;  }
+	.row .offset-by-nine:first-child 	{ margin-left: 78.3%;  }
+	.row .offset-by-ten:first-child 	{ margin-left: 87%;  }
+	.row .offset-by-eleven:first-child 	{ margin-left: 95.7%;  }
+	
+	img, object, embed { max-width: 100%; }
+	img { -ms-interpolation-mode: bicubic; }
+		
+	
+	/* Clear the columns automagically */
+	/*
+ .row:after, .clearfix:after { content: "."; display: block; height: 0; clear: both; visibility: hidden; }
+	 .row:last-child:after { content: ""; }
+	 * html .row, * html .clearfix { height: 1%; }
+	 .row, .clearfix { display: inline-block; }
+	 .row, .clearfix { display: block; }
+*/
+	 
+	 /* Testing Nicolas Gallagher's micro clearfix */
+	 .row:before, .row:after, .clearfix:before, .clearfix:after { content:""; display:table; }
+	 .row:after, .clearfix:after { clear: both; }
+	 .row, .clearfix { zoom: 1; }
+
+
+
+/*	--------------------------------------------------
+	:: Tables
+	-------------------------------------------------- */
+	table {  width: 100%; margin: 1em 0 18px; border: 0;  }
+	
+	table thead { background-color: rgba(58, 131, 179, 0.05); }
+	table thead tr th,
+	table tbody tr td { text-align: left; }
+	table thead tr th { padding: 8px 10px 9px; font-size: 14px; font-weight: bold; 
+		border-color: #3a83b3;
+		border-style: solid; 
+		border-width: 0px 0px 1px 0;	
+	}
+	table thead tr th:first-child { border-left: none; }
+	table thead tr th:last-child { border-right: none; }
+	
+	table thead tr {  }
+	table tbody {  }
+	table tbody tr {
+		-webkit-transition: all 0.5s ease-out;  /* Android 2.1+, Chrome 1-25, iOS 3.2-6.1, Safari 3.2-6  */
+		transition: all 0.5s ease-out;  /* Chrome 26, Firefox 16+, iOS 7+, IE 10+, Opera, Safari 6.1+  */}
+	table tbody tr:hover { background-color: rgba(58, 131, 179, 0.2); }
+	table tbody tr.even,
+	table tbody tr.alt {  }
+	table tbody tr:nth-child(even) { background-color: rgba(150, 150, 150, 0.1); }
+	table tbody tr:nth-child(even):hover { background-color: rgba(58, 131, 179, 0.2); }
+	table tbody tr td { padding: 9px 10px; vertical-align: top; border: none; }
+	
+	img.zmenseni { max-height: 200px; vertical-align: middle; margin: 0 5px 0 0;}
+
+	
+	
+/* -------------------------------------------------- 
+	:: Misc
+---------------------------------------------------*/
+	.left       { float: left; }
+	.right      { float: right; }
+	.hide     	{ display: none; }
+	.highlight 	{ background: #ff0; }
+	.tar		{ text-align: right;}
+	.tac		{ text-align: center;}
+	.tal		{ text-align: left;}
+
+	
+	
+/*	--------------------------------------------------
+	:: Block grids
+	
+	These are 2-up, 3-up, 4-up and 5-up ULs, suited
+	for repeating blocks of content. Add 'mobile' to
+	them to switch them just like the layout grid
+	(one item per line) on phones
+	-------------------------------------------------- */
+	
+	.block-grid { display: block; overflow: hidden; }
+	.block-grid li { display: block; height: auto; float: left; }
+	
+	.block-grid.two-up { margin-left: -4% }
+	.block-grid.two-up li { margin-left: 4%; width: 46%; }
+	
+	.block-grid.three-up { margin-left: -2% }
+	.block-grid.three-up li { margin-left: 2%; width: 31.3%; }
+	
+	.block-grid.four-up { margin-left: -2% }
+	.block-grid.four-up li { margin-left: 2%; width: 23%; }
+	
+	.block-grid.five-up { margin-left: -1.5% }
+	.block-grid.five-up li { margin-left: 1.5%; width: 18.5%; }
+	
+	
+/* 	additional */
+
+	
+.logo { 
+	max-width: 153px; 
+}
+.mensi { 
+	font-size: smaller; 
+}
+	
+	
+/* Flexible iFrame */
+
+.Flexible-container {
+    position: relative;
+    padding-bottom: 56.25%;
+    padding-top: 30px;
+    height: 0;
+    overflow: hidden;
+}
+
+.Flexible-container iframe,   
+.Flexible-container object,  
+.Flexible-container embed {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}	
+	
+	
+
+
+
+
+	
+.nahled {
+	position:relative;
+	overflow: hidden;
+	/*-webkit-transform-style: preserve-3d;
+	-moz-transform-style: preserve-3d;
+	transform-style: preserve-3d;*/
+	border-radius: 6px;
+	}
+
+.design .row, .ci .row, .web .row, .online .row {
+	background-color: rgba(255,255,255,0.09);
+	padding-bottom: 0.9em; 
+/*	  -webkit-box-shadow: 0px 3px 2px -2px #a3a3a3; */
+/*  box-shadow: 0px 3px 2px -2px #a3a3a3; */
+	  border-radius: 6px; 
+	  border: 0 ;
+	  margin-bottom: 20px;
+	  overflow: hidden;
+				  
+	}	
+
+	
+.button-top {
+  border: 0;
+  max-width:50px;
+  float: right;
+  margin-top: 5em;
+}
+
