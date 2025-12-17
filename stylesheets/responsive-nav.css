@@ -152,6 +152,8 @@
     -moz-background-size: 100px 100px;
     -o-background-size: 100px 100px;
     background-size: 100px 100px;
+	  display:none;
   }
 }
+
 
