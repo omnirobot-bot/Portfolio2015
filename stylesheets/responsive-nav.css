@@ -142,7 +142,7 @@
   text-indent: -9999px;
   overflow: hidden;
   background: url("../images/hamburger.gif") no-repeat 50% 50%;
-	display:none;
+	
 }
 
 @media screen and (-webkit-min-device-pixel-ratio: 1.3), screen and (min--moz-device-pixel-ratio: 1.3), screen and (-o-min-device-pixel-ratio: 2 / 1), screen and (min-device-pixel-ratio: 1.3), screen and (min-resolution: 192dpi), screen and (min-resolution: 2dppx) {
@@ -152,8 +152,9 @@
     -moz-background-size: 100px 100px;
     -o-background-size: 100px 100px;
     background-size: 100px 100px;
-	  display:none;
+	  
   }
 }
+
 
 
