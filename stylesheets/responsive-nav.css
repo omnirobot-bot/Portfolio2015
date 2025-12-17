@@ -22,7 +22,7 @@
 	  zoom: 1;
   }
   #nav-toggle {
-    display: block;
+    display: none;
   }
 }
 
@@ -155,6 +155,7 @@
 	  
   }
 }
+
 
 
 
