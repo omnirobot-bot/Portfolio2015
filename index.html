@@ -1,47 +1,1348 @@
 <!DOCTYPE html>
-
-<!-- paulirish.com/2008/conditional-stylesheets-vs-css-hacks-answer-neither/ -->
-<!--[if lt IE 7]> <html class="no-js lt-ie9 lt-ie8 lt-ie7" lang="en"> <![endif]-->
-<!--[if IE 7]>    <html class="no-js lt-ie9 lt-ie8" lang="en"> <![endif]-->
-<!--[if IE 8]>    <html class="no-js lt-ie9" lang="en"> <![endif]-->
-<!--[if gt IE 8]><!--> <html lang="en"> <!--<![endif]-->
+<html lang="cs">
 <head>
-	<meta charset="utf-8" />
-	<meta name="robots" content="none" />
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Martin Štěch | PORTFOLIO</title>
+<link href="https://fonts.googleapis.com/css?family=Armata|Exo:400,600&subset=latin,latin-ext" rel="stylesheet">
+<style>
+/* Arfully Masterminded by ZURB */
+
+/* -------------------------------------------------- 
+    Table of Contents
+-----------------------------------------------------
+:: Reset & Standards
+:: Typography
+:: Links
+:: Lists
+:: Mobile-Friendly Grid
+:: Tables
+:: Misc
+:: Block Grids
+*/
+
+
+/*	--------------------------------------------------
+	:: Global Reset & Standards
+	-------------------------------------------------- */
 	
-	<!-- Set the viewport width to device width for mobile -->
-	<meta name="viewport" content="width=device-width, initial-scale=1" />
+	/* 
+		Eric Meyer's CSS Reset
+		http://meyerweb.com/eric/tools/css/reset/ 
+		v2.0 | 20110126
+   		License: none (public domain)
+	*/
 	
-	<title>Martin Štěch | PORTFOLIO</title>
+	html, body, div, span, applet, object, iframe,
+	h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+	a, abbr, acronym, address, big, cite, code,
+	del, dfn, em, img, ins, kbd, q, s, samp,
+	small, strike, strong, sub, sup, tt, var,
+	b, u, i, center,
+	dl, dt, dd, ol, ul, li,
+	fieldset, form, label, legend,
+	table, caption, tbody, tfoot, thead, tr, th, td,
+	article, aside, canvas, details, embed, 
+	figure, figcaption, footer, header, hgroup, 
+	menu, nav, output, ruby, section, summary,
+	time, mark, audio, video {
+		margin: 0;
+		padding: 0;
+		border: 0;
+		font: inherit;
+		vertical-align: baseline;
+	}
+	html {
+		font-size: 62.5%; 
+	}
+	/* HTML5 display-role reset for older browsers */
+	article, aside, details, figcaption, figure, 
+	footer, header, hgroup, menu, nav, section {
+		display: block;
+	}
+	body {
+		line-height: 1;
+	}
+	ol, ul {
+		list-style: none;
+	}
+	blockquote, q {
+		quotes: none;
+	}
+	blockquote:before, blockquote:after,
+	q:before, q:after {
+		content: '';
+		content: none;
+	}
+	table {
+		border-collapse: collapse;
+		border-spacing: 0;
+	}
+	
+	
+	
+	body { background: none #5290C1; font-family: "Armata", "Helvetica Neue", "HelveticaNeue", Helvetica, Arial, "Lucida Grande", sans-serif; font-size: 11px; line-height: 1.1em; color: #fff; position: relative; -webkit-font-smoothing: antialiased; }
+	
+	.pozadi{ 
+	min-height: 100%;
+	min-width: 768px;
+	width: 100%;
+	height: auto;
+	position: fixed;
+	top: 0;
+	left: 0;
+	z-index: -99999;
+	-webkit-user-select: none;
+	-khtml-user-select: none;
+	-moz-user-select: none;
+	-o-user-select: none;
+	user-select: none;
+	}
+	
+
+/*	--------------------------------------------------
+    :: Typography
+	-------------------------------------------------- */
+	h1, h2, h3, h4, h5, h6 { color: #999; /*font-weight: bold;*/ line-height: 1.7rem }
+	h1 a, h2 a, h3 a, h4 a, h5 a, h6 a { font-weight: inherit; }
+	h1 { font-size: 46px; font-size: 4.6rem; margin-bottom: 12px; margin: 0 auto;}
+	h2 { font-size: 35px; font-size: 3.5rem; margin-bottom: 9px; }
+	h3 { font-size: 15px; font-size: 1.5rem; margin-bottom: 2em;
+		padding-bottom:1em; color:#fff; text-transform: uppercase;
+		border-color: #fff;
+		background-image: linear-gradient(to right, white 50%, rgba(0,0,0,0) 0%);
+		background-position: bottom;
+		background-size: 5px 1px;
+		background-repeat: repeat-x;
+	}
+	h3 a, h3 a:hover { color:#fff;}
+	
+	h4 { font-size: 13px; font-size: 1.2rem;
+		margin: 0.4rem 0.8rem 0.2rem; color: rgba(255, 255, 255, 1);
+		
+	}
+	h5 { font-size: 11px; font-size: 1.1rem; font-weight: normal; margin: 0.6rem 1rem 0.1rem 0.8rem; color:rgba(255, 255, 255, 0.8);
+	border-top: 1px solid rgba(255,255,255,0.2); padding-top: 0.6rem;
+	}
+	h6 { font-size: 15px; font-size: 1.5rem; font-weight: normal; margin: 1.5em 0 0.8em 0;}
+	
+
+	
+	.bigmargin {margin: 4% 7%;}
+	.middlemargin {margin: 3% 3%;}
+	.smallmargin {margin: 2% 3%;}
+	.v1 {font-size: 43px; font-size: 4.3rem; margin-bottom: 0px;line-height: 4rem;}
+	.v2 {font-size: 30px; font-size: 3rem; line-height: 2.3rem;}
+	.v3 {font-size: 20px; font-size: 2rem; margin-bottom: 10px;line-height: 2.2rem;}
+	.box {background-color: #f9f9f7; 
+		padding: 1em 1.3em 2em 1.3em; 
+		  -webkit-box-shadow: 0px 3px 2px -2px #a3a3a3; 
+				  box-shadow: 0px 3px 2px -2px #a3a3a3; 
+				  border-radius: 5px; 
+				  border: 1px solid #e5e5e5 ;
+				  margin-bottom: 1em;
+			}
+	
+	
+	
+	
+	header h1{padding: 0.7em 0 0 0; max-width: 157px; margin: 0 auto;}
+
+		
+
+	.subheader { color: #777; font-weight: 300; margin-bottom: 24px; }
+
+	p { line-height: 1.5em; margin: 0.3em 0 0.5em 0; }
+	p img { margin: 0; }
+	p.lead { font-size: 18px; font-size: 1.8rem; line-height: 24px;  }
+	
+		/* Mobile */
+		
+		@media (max-width: 30em) {
+			body, p {  font-size: 15px; font-size: 1.5rem; line-height: 1.4; }
+			#ci h3, #web h3, #online h3  {padding-top: 6em;}
+		}
+		
+	
+			
+	em { font-style: italic; line-height: inherit; }
+	strong { font-weight: bold; line-height: inherit; }
+	small { font-size: 60%; line-height: inherit; }
+	
+	h1 small, h2 small, h3 small, h4 small, h5 small { color: #777; }
+	
+/*	Blockquotes  */
+	blockquote, blockquote p { line-height: 20px; color: #777; }
+	blockquote { margin: 0 0 18px; padding: 9px 20px 0 19px; border-left: 1px solid #ddd; }
+	blockquote cite { display: block; font-size: 12px; font-size: 1.2rem; color: #555; }
+	blockquote cite:before { content: "\2014 \0020"; }
+	blockquote cite a, blockquote cite a:visited { color: #555; }
+	
+	hr { border-style: solid; border-width: 0px 0px 1px 0; 
+		-moz-border-image: url(../images/rainbow.gif) 0 0 1 stretch; 
+		-webkit-border-image: url(../images/rainbow.gif) 0 0 1 stretch; 
+		-o-border-image: url(../images/rainbow.gif) 0 0 1 stretch; 
+		border-image: url(../images/rainbow.gif) 0 0 1 stretch; 
+		clear: both; 
+		margin: 12px 0 12px; 
+		height: 0; 
+	
+	}
+	hr.sedy {  border: 0; height: 0; border-top: 1px solid rgba(0, 0, 0, 0.1); border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+		-moz-border-image: none; 
+		-webkit-border-image: none; 
+		-o-border-image: none; 
+		border-image: none; 
+	
+	}
+	
+	abbr, acronym { text-transform: uppercase; font-size: 90%; color: #222; border-bottom: 1px solid #ddd; cursor: help; }
+	abbr { text-transform: none; }
+
+	/**
+ 	 * Print styles.
+	 *
+	 * Inlined to avoid required HTTP connection: www.phpied.com/delay-loading-your-print-css/
+	 * Credit to Paul Irish and HTML5 Boilerplate (html5boilerplate.com)
+	 */
+	@media print {
+	  * { background: transparent !important; color: black !important; text-shadow: none !important; filter:none !important;
+	  -ms-filter: none !important; } /* Black prints faster: sanbeiji.com/archives/953 */
+	  p a, p a:visited { color: #444 !important; text-decoration: underline; }
+	  p a[href]:after { content: " (" attr(href) ")"; }
+	  abbr[title]:after { content: " (" attr(title) ")"; }
+	  .ir a:after, a[href^="javascript:"]:after, a[href^="#"]:after { content: ""; }  /* Don't show links for images, or javascript/internal links */
+	  pre, blockquote { border: 1px solid #999; page-break-inside: avoid; }
+	  thead { display: table-header-group; } /* css-discuss.incutio.com/wiki/Printing_Tables */
+	  tr, img { page-break-inside: avoid; }
+	  @page { margin: 0.5cm; }
+	  p, h2, h3 { orphans: 3; widows: 3; }
+	  h2, h3{ page-break-after: avoid; }
+	}
+
+
+/*	--------------------------------------------------
+	:: Links
+	-------------------------------------------------- */
+	a { color: #3a83b3; text-decoration: none; outline: 0; line-height: inherit; }
+	a:hover { color: #000; }
+	p a, p a:visited { line-height: inherit; text-decoration: underline;}
+	
+
+/*	--------------------------------------------------
+	:: Lists
+	-------------------------------------------------- */
+	ul, ol { margin-bottom: 18px; }
+	ul { list-style: none outside; }
+	ol { list-style: decimal; }
+	ol, ul.square, ul.circle, ul.disc { margin-left: 30px; }
+	ul.square { list-style: square outside; }
+	ul.circle { list-style: circle outside; }
+	ul.disc { list-style: disc outside; }
+	ul ul, ol ol { margin: 4px 0 5px 30px; }
+	li { margin-bottom: 12px; }
+	ul.large li { line-height: 21px; }
+	
+	
+/* --------------------------------------------------
+	:: Grid
+	-------------------------------------------------- */
+
+	.container { padding: 0px 3rem; }
+	.container.obsah { padding: 0rem 3rem 3rem 3rem; }
+	
+	.row { width: 100%; max-width: 100%; margin: 0 auto; margin-bottom: 1.5em; }
+	/* To fix the grid into a certain size, set max-width to width */
+	.row .row { min-width: 0px; }
+	
+	.column, .columns { margin-left: 2%; float: left; min-height: 1px; position: relative; margin-bottom: 1rem; }
+	.column:first-child, .columns:first-child { margin-left: 0px; }
+	
+	.row .one.columns { width: 6.4%; }
+	.row .two.columns { width: 14.8%; }
+	.row .three.columns { width: 23.25%; }
+	.row .four.columns { width: 31.6%; }
+	.row .five.columns { width: 40%; }
+	.row .six.columns { width: 48.5%; }
+	.row .seven.columns { width: 56.9%; }
+	.row .eight.columns { width: 65.3%; }
+	.row .nine.columns { width: 73.75%; }
+	.row .ten.columns { width: 82.1%; }
+	.row .eleven.columns { width: 90.58%; }
+	.row .twelve.columns { width: 100%; }
+	
+		
+	.row .offset-by-one 	{ margin-left: 13.1%;  }
+	.row .offset-by-two 	{ margin-left: 21.8%;  }
+	.row .offset-by-three 	{ margin-left: 30.5%;  }
+	.row .offset-by-four 	{ margin-left: 39.2%;  }
+	.row .offset-by-five 	{ margin-left: 47.9%;  }
+	.row .offset-by-six 	{ margin-left: 56.6%;  }
+	.row .offset-by-seven 	{ margin-left: 65.3%;  }
+	.row .offset-by-eight 	{ margin-left: 74.0%;  }
+	.row .offset-by-nine 	{ margin-left: 82.7%;  }
+	.row .offset-by-ten 	{ margin-left: 91.4%;  }
+	/*.row .offset-by-eleven 	{ margin-left: 95.7%;  }*/
+	
+	.row .one.centered { margin-left: 47.9%; }
+	.row .two.centered { margin-left: 43.5%; }
+	.row .three.centered { margin-left: 39.2%; }
+	.row .four.centered { margin-left: 34.8%; }
+	.row .five.centered { margin-left: 30.5%; }
+	.row .six.centered { margin-left: 26.1%; }
+	.row .seven.centered { margin-left: 21.8%; }
+	.row .eight.centered { margin-left: 17.4%; }
+	.row .nine.centered { margin-left: 13.1%; }
+	.row .ten.centered { margin-left: 8.7%; }
+	.row .eleven.centered { margin-left: 4.3%; }
+
+	.row .offset-by-one:first-child 	{ margin-left: 8.7%;  }
+	.row .offset-by-two:first-child 	{ margin-left: 17.4%;  }
+	.row .offset-by-three:first-child 	{ margin-left: 26.1%;  }
+	.row .offset-by-four:first-child 	{ margin-left: 34.8%;  }
+	.row .offset-by-five:first-child 	{ margin-left: 43.5%;  }
+	.row .offset-by-six:first-child 	{ margin-left: 52.2%;  }
+	.row .offset-by-seven:first-child 	{ margin-left: 60.9%;  }
+	.row .offset-by-eight:first-child 	{ margin-left: 69.6%;  }
+	.row .offset-by-nine:first-child 	{ margin-left: 78.3%;  }
+	.row .offset-by-ten:first-child 	{ margin-left: 87%;  }
+	.row .offset-by-eleven:first-child 	{ margin-left: 95.7%;  }
+	
+	img, object, embed { max-width: 100%; }
+	img { -ms-interpolation-mode: bicubic; }
+		
+	
+	/* Clear the columns automagically */
+	/*
+ .row:after, .clearfix:after { content: "."; display: block; height: 0; clear: both; visibility: hidden; }
+	 .row:last-child:after { content: ""; }
+	 * html .row, * html .clearfix { height: 1%; }
+	 .row, .clearfix { display: inline-block; }
+	 .row, .clearfix { display: block; }
+*/
+	 
+	 /* Testing Nicolas Gallagher's micro clearfix */
+	 .row:before, .row:after, .clearfix:before, .clearfix:after { content:""; display:table; }
+	 .row:after, .clearfix:after { clear: both; }
+	 .row, .clearfix { zoom: 1; }
+
+
+
+/*	--------------------------------------------------
+	:: Tables
+	-------------------------------------------------- */
+	table {  width: 100%; margin: 1em 0 18px; border: 0;  }
+	
+	table thead { background-color: rgba(58, 131, 179, 0.05); }
+	table thead tr th,
+	table tbody tr td { text-align: left; }
+	table thead tr th { padding: 8px 10px 9px; font-size: 14px; font-weight: bold; 
+		border-color: #3a83b3;
+		border-style: solid; 
+		border-width: 0px 0px 1px 0;	
+	}
+	table thead tr th:first-child { border-left: none; }
+	table thead tr th:last-child { border-right: none; }
+	
+	table thead tr {  }
+	table tbody {  }
+	table tbody tr {
+		-webkit-transition: all 0.5s ease-out;  /* Android 2.1+, Chrome 1-25, iOS 3.2-6.1, Safari 3.2-6  */
+		transition: all 0.5s ease-out;  /* Chrome 26, Firefox 16+, iOS 7+, IE 10+, Opera, Safari 6.1+  */}
+	table tbody tr:hover { background-color: rgba(58, 131, 179, 0.2); }
+	table tbody tr.even,
+	table tbody tr.alt {  }
+	table tbody tr:nth-child(even) { background-color: rgba(150, 150, 150, 0.1); }
+	table tbody tr:nth-child(even):hover { background-color: rgba(58, 131, 179, 0.2); }
+	table tbody tr td { padding: 9px 10px; vertical-align: top; border: none; }
+	
+	img.zmenseni { max-height: 200px; vertical-align: middle; margin: 0 5px 0 0;}
+
+	
+	
+/* -------------------------------------------------- 
+	:: Misc
+---------------------------------------------------*/
+	.left       { float: left; }
+	.right      { float: right; }
+	.hide     	{ display: none; }
+	.highlight 	{ background: #ff0; }
+	.tar		{ text-align: right;}
+	.tac		{ text-align: center;}
+	.tal		{ text-align: left;}
+
+	
+	
+/*	--------------------------------------------------
+	:: Block grids
+	
+	These are 2-up, 3-up, 4-up and 5-up ULs, suited
+	for repeating blocks of content. Add 'mobile' to
+	them to switch them just like the layout grid
+	(one item per line) on phones
+	-------------------------------------------------- */
+	
+	.block-grid { display: block; overflow: hidden; }
+	.block-grid li { display: block; height: auto; float: left; }
+	
+	.block-grid.two-up { margin-left: -4% }
+	.block-grid.two-up li { margin-left: 4%; width: 46%; }
+	
+	.block-grid.three-up { margin-left: -2% }
+	.block-grid.three-up li { margin-left: 2%; width: 31.3%; }
+	
+	.block-grid.four-up { margin-left: -2% }
+	.block-grid.four-up li { margin-left: 2%; width: 23%; }
+	
+	.block-grid.five-up { margin-left: -1.5% }
+	.block-grid.five-up li { margin-left: 1.5%; width: 18.5%; }
+	
+	
+/* 	additional */
+
+	
+.logo { 
+	max-width: 153px; 
+}
+.mensi { 
+	font-size: smaller; 
+}
+	
+	
+/* Flexible iFrame */
+
+.Flexible-container {
+    position: relative;
+    padding-bottom: 56.25%;
+    padding-top: 30px;
+    height: 0;
+    overflow: hidden;
+}
+
+.Flexible-container iframe,   
+.Flexible-container object,  
+.Flexible-container embed {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}	
+	
+	
+
+
+
+
+	
+.nahled {
+	position:relative;
+	overflow: hidden;
+	/*-webkit-transform-style: preserve-3d;
+	-moz-transform-style: preserve-3d;
+	transform-style: preserve-3d;*/
+	border-radius: 6px;
+	}
+
+.design .row, .ci .row, .web .row, .online .row {
+	background-color: rgba(255,255,255,0.09);
+	padding-bottom: 0.9em; 
+/*	  -webkit-box-shadow: 0px 3px 2px -2px #a3a3a3; */
+/*  box-shadow: 0px 3px 2px -2px #a3a3a3; */
+	  border-radius: 6px; 
+	  border: 0 ;
+	  margin-bottom: 20px;
+	  overflow: hidden;
+				  
+	}	
+
+	
+.button-top {
+  border: 0;
+  max-width:50px;
+  float: right;
+  margin-top: 5em;
+}
+
+/* Artfully masterminded by ZURB  */
+
+
+
+/* -------------------------------------------------- 
+                                Table of Contents
+-----------------------------------------------------
+:: Buttons
+:: Notices/Alerts
+:: Tabs
+:: Pagination
+:: Lists
+:: Panels
+*/
+
+
+
+	
+/*	--------------------------------------------------
+	Buttons
+	-------------------------------------------------- */
+
+	.button {
+		background: #3a83b3;
+		border: none;
+		display: inline-block;
+		text-align: center;
+		padding: 9px 14px;
+		color: #fff;
+		text-decoration: none;
+		line-height: 1;
+		position: relative;
+		cursor: pointer;
+		text-transform: uppercase;
+		-moz-border-radius: 4px;
+		-webkit-border-radius: 4px;
+		border-radius: 4px;
+		-webkit-box-shadow: 0px 4px 2px -2px #a3a3a3; 
+		box-shadow: 0px 4px 2px -2px #a3a3a3; 
+		
+	}
+	
+	.button.nice { 
+		background: #3a83b3 url(../images/button-gloss.png) repeat-x 0 -34px;
+		-moz-box-shadow: inset 0 1px 0 rgba(255,255,255,.5);
+		-webkit-box-shadow: inset 0 1px 0 rgba(255,255,255,.5);
+		text-shadow: 0 -1px 1px rgba(0,0,0,0.28);
+		background: #00a6fc url(../images/button-gloss.png) repeat-x 0 -34px, -moz-linear-gradient(top, rgba(255,255,255,.4) 0%, transparent 100%);
+		background: #00a6fc url(../images/button-gloss.png) repeat-x 0 -34px, -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(255,255,255,.4)), color-stop(100%,transparent));
+		border: 1px solid #0593dc;
+		-webkit-transition: background-color .15s ease-in-out;
+		-moz-transition: background-color .15s ease-in-out;
+		-o-transition: background-color .15s ease-in-out; 
+	}
+
+	.button.radius { 
+		-moz-border-radius: 3px;
+		-webkit-border-radius: 3px;
+		border-radius: 3px;
+	}
+	.button.round { 
+		-moz-border-radius: 1000px;
+		-webkit-border-radius: 1000px;
+		border-radius: 1000px;
+	}
+	
+	.button.full-width { 
+		width: 100%;
+		padding-left: 0 !important;
+		padding-right: 0 !important;
+		text-align: center; 
+	}
+	
+	.button.left-align { 
+		text-align: left; 
+		text-indent: 12px;
+	}
+	
+	.button:active {}
+	
+	/* Sizes ---------- */
+	.small.button 			{ font-size: 16px; padding: 6px 8px 5px 8px; }
+	.medium.button 			{ font-size: 13px; }
+	.large.button 			{ font-size: 18px; padding: 11px 48px 13px; }
+	
+	/* Nice Sizes ---------- */
+	.nice.small.button 		{ background-position: 0 -36px; }
+	.nice.large.button 		{ background-position: 0 -30px; }
+	 
+	/* Colors ---------- */
+	.blue.button			{ background-color: #00a6fc;  }
+	.red.button				{ background-color: #e91c21; }
+	.white.button			{ background-color: #e9e9e9; color: #333; }
+	.charcoal.button		{ background-color: #141414; }
+	
+	/* Nice Colors ---------- */
+	.nice.blue.button		{ border: 1px solid #0593dc;  }
+	.nice.red.button		{ border: 1px solid #b90b0b;  }
+	.nice.white.button		{ border: 1px solid #cacaca; text-shadow: none !important; }
+	.nice.charcoal.button	{ border: 1px solid #000; }
+	
+	/* Hovers ---------- */
+	.button:hover 			{ background-color: #0192dd; color: #fff; }
+	.blue.button:hover		{ background-color: #0192dd; 	}
+	.red.button:hover 		{ background-color: #d01217; 	}
+	.white.button:hover		{ background-color: #dadada; color: #333; }
+	.charcoal.button:hover	{ background-color: #000; }
+	
+	
+
+/*    --------------------------------------------------
+    Tabs
+    -------------------------------------------------- */
+    dl.tabs { display: block; margin: 0 0 20px 0; padding: 0; height: 30px; border-bottom: solid 1px #ddd; }
+    dl.tabs dt { display: block; width: auto; height: 30px; padding: 0px 9px 0 20px; line-height: 30px; float: left; color: #999; font-size: 11px; text-transform: uppercase; cursor: default; }
+    dl.tabs dt:first-child { padding: 0 9px 0 0px; }
+    dl.tabs dd { display: block; width: auto; height: 30px; padding: 0; float: left; }
+    dl.tabs dd a { display: block; width: auto; height: 29px; padding: 0px 9px; line-height: 30px; border: solid 1px #ddd; margin: 0 -1px 0 0; color: #555; background: #eee; }
+    dl.tabs dd a.active { background: #fff; border-width: 1px 1px 0px 1px; height: 30px; }
+
+		.nice.tabs { border-bottom: solid 1px #eee; margin: 0 0 30px 0; height:43px; }
+		.nice.tabs dd a { padding: 7px 18px 9px; font-size: 15px; font-size: 1.5rem; color: #555555; background: none; border: none; }
+		.nice.tabs dd a.active { font-weight: bold; color: #333; background: #fff; border-left: 1px solid #eee; border-right: 1px solid #eee; border-top: 3px solid #00a6fc; margin: 0 10px; position: relative; top: -5px; }
+		.nice.tabs dd:first-child a.active { margin-left: 0; }
+    
+    ul.tabs-content { margin: 0; display: block; }
+    ul.tabs-content > li { display:none; }
+    ul.tabs-content > li.active { display: block; }
+    
+    dl.contained, dl.nice.contained { margin-bottom: 0px; }
+    dl.contained.tabs dd a { padding: 0px 14px; }
+    dl.nice.contained.tabs dd a { padding: 7px 18px 9px; }
+    
+    ul.contained.tabs-content { padding: 0; }
+    ul.contained.tabs-content li { padding: 20px; border: solid 0px #ddd; border-width: 0px 1px 1px 1px; }
+    ul.nice.contained.tabs-content li { border-color: #eee; }
+    
+/*  --------------------------------------------------
+    Pagination
+    -------------------------------------------------- */ 
+    ul.pagination { display: block; height: 24px; margin-left: -5px; }
+    ul.pagination li { float: left; display: block; height: 24px; color: #999; font-size: 15px; margin-left: 5px; }
+    ul.pagination li a { display: block; padding: 6px 7px 4px; color: #555; }
+    ul.pagination li.current a, ul.pagination li:hover a { border-bottom: solid 2px #00a6fc; color: #141414; }
+    ul.pagination li.unavailable a { cursor: default; color: #999; }
+    ul.pagination li.unavailable:hover a { border-bottom: none; }
+    
+    
+/*  --------------------------------------------------
+    Lists
+    -------------------------------------------------- */ 
+    ul.nice, ol.nice { list-style: none; margin: 0; }
+    ul.nice li, ol.nice li { padding-left: 13px; position: relative }
+    ul.nice li span.bullet, ol.nice li span.number { position: absolute; left: 0px; top: 0px; color: #ccc; }
+    
+
+/* -------------------------------------------------- 
+   Notices/Alerts
+---------------------------------------------------*/
+/* Alerts cannot be closed and notices can */
+
+	.notice, .alert { 
+		position: relative;
+	    background: #222 url(../images/button-overlay.png) repeat-x bottom;
+	    width: 100%;
+	    margin: 10px 0;
+	    -moz-border-radius: 3px;
+	    -webkit-border-radius: 3px;
+	    border-radius: 3px;
+	    color: #fff;
+	    text-shadow: 0 -1px 1px rgba(0,0,0,0.25);
+	    font-weight: bold;
+	}
+	.notice>span, .alert>span {
+	    display: block;
+	    padding: 5px 10px 6px;
+	}
+	.notice a.close {
+	    font-size: 20px;
+	    line-height: .5;
+	    color: #fff;
+	    text-shadow: 0 -1px 1px rbga(0,0,0,.25);
+	    font-weight: bold; 
+	    cursor: pointer;
+	    position: absolute; 
+	    right: 10px; 
+	    top: 6px; 
+	} 
+	
+	/*  NOTES
+	
+	Close button entity is &#215; 
+	Sample Markup: 
+	<div class="notice"><span>
+		This is awesome
+		<a class="close" href="#">&#215;</a>
+	</span></div>
+
+*/
+
+
+
+/*	--------------------------------------------------
+	Panels
+	-------------------------------------------------- */
+	div.panel { 
+		padding: 20px 20px 2px 20px;
+		background: #efefef;
+		background: -moz-linear-gradient(top, #FFFFFF 0%, #F4F4F4 100%); 
+		background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#FFFFFF), color-stop(100%,#F4F4F4));
+		filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#FFFFFF', endColorstr='#F4F4F4',GradientType=0 );
+		box-shadow: 0px 2px 5px rgba(0,0,0,0.15);
+		-webkit-box-shadow: 0px 2px 5px rgba(0,0,0,0.15);
+		-moz-box-shadow: 0px 2px 5px rgba(0,0,0,0.25);
+		margin: 0 0 20px 0;
+	}
+	
+	
+
+/* 	Artfully masterminded by ZURB  
+	
+	Make sure to include the app.js if you are going to use inline label inputs 
+*/
+ 
+ 
+/* -----------------------------------------
+   Standard Forms
+----------------------------------------- */
+
+	form { margin: 0 0 18px; }
+	form label { display: block; font-size: 13px; line-height: 1.5em;  cursor: pointer; margin: 1em 0; 
+	}
+	
+	input.input-text, textarea { }
+	input.input-text, textarea, select { 
+		margin-bottom: 9px;
+		font-family: Roboto Slab, "Helvetica Neue", "HelveticaNeue", Helvetica, Arial, "Lucida Grande", sans-serif;
+		
+		color: #666666;
+		height: 30px;
+		width: 100%;
+		padding: 5px 5px 5px 10px;
+		border: 1px solid #E5E5E5;
+		-webkit-box-shadow: inset 1px 1px 10px rgba(238, 238, 238, 0.9);
+		box-shadow: inset 1px 1px 10px rgba(238, 238, 238, 0.9);
+		border-radius: 7px; -webkit-border-radius: 7px; -moz-border-radius: 7px;
+	}
+	
+	label + input.input-text, label + textarea, label + select, label + div.dropdown, select + div.dropdown { margin-top: -9px; }
+	
+	/* Text input and textarea font and padding */
+	input.input-text, textarea { }
+	input.input-text.oversize, textarea.oversize { font-size: 18px !important; padding: 4px 5px !important; }
+	input.input-text:focus, textarea:focus { border-color: #33abd3; }
+	
+	/* Inlined Label Style */
+	input.placeholder, textarea.placeholder { color: #888; }
+
+	/* Text input and textarea sizes */
+	input.input-text, textarea { width: 150px; }
+	input.small, textarea.small { width: 40px; }
+	input.medium, textarea.medium { width: 254px; }
+	input.large, textarea.large { width: 434px; }
+	
+	/* Fieldsets */
+	form fieldset { padding: 9px 9px 2px 9px; border: solid 1px #ddd; margin: 18px 0; }
+	
+	/* Errors */
+	input.input-text.red { border-color: red; background-color: rgba(255,0,0,0.15); }
+	label.red { color: red; }
+	small.error { margin-top: -6px; display: block; margin-bottom: 9px; font-size: 11px; color: red; width: 260px; }
+	
+	.small + .error { width: 140px; }
+	.medium + .error { width: 260px; }
+	.large + .error { width: 440px; }
+	
+	/* -----------------------------------------
+	   Nicer Forms
+	----------------------------------------- */
+	form.nice input.input-text, form.nice textarea { border: solid 1px #bbb; border-radius: 2px; -webkit-border-radius: 2px; -moz-border-radius: 2px; }
+	form.nice input.input-text, form.nice textarea { font-size: 13px; padding: 6px 3px 4px; outline: none !important; background: url(../images/misc/input-bg.png) #fff; }
+	form.nice input.input-text:focus, form.nice textarea:focus { background-color: #f9f9f9; }
+	
+	form.nice fieldset { border-radius: 3px; -webkit-border-radius: 3px; -moz-border-radius: 3px; }
+	
+	form.nice small.error { padding: 6px 4px; border: solid 0px red; border-width: 0px 1px 1px 1px; margin-top: -10px; background: red; color: #fff; font-size: 12px; font-weight: bold; border-bottom-left-radius: 2px; border-bottom-right-radius: 2px; -webkit-border-bottom-left-radius: 2px; -webkit-border-bottom-right-radius: 2px; -moz-border-radius-bottomleft: 2px; -moz-border-radius-bottomright: 2px; }
+	
+	form.nice .small + .error { width: 100px; }
+	form.nice .medium + .error { width: 252px; }
+	form.nice .large + .error { width: 432px; }	
+	
+	/* -----------------------------------------
+	   Custom Forms
+	----------------------------------------- */
+
+	form.custom span.custom { display: inline-block; width: 14px; height: 14px; position: relative; top: 4px; border: solid 3px #ccc; background: url(../images/misc/custom-form-sprites.png) 0 0 no-repeat; }
+	form.custom span.custom.radio { border-radius: 7px; -webkit-border-radius: 7px; -moz-border-radius: 7px; }
+	form.custom .radio label, form.custom .checkbox label { display: inline-block; margin-right: 10px;}
+	form.custom span.custom.radio.checked { background-position: 0px -14px; }
+	form.custom span.custom.checkbox.checked { background-position: 0px -28px; }
+	
+	form.custom div.custom.dropdown { position: relative; display: inline-block; width: auto; height: 28px; margin-bottom: 9px; }
+	form.custom div.custom.dropdown a.current { 
+		display: block; 
+		width: auto; 
+		line-height: 40px; 
+		padding: 0 38px 0 10px; 
+		border: solid 1px #E5E5E5; 
+		background-color: #fff;
+		-webkit-box-shadow: inset 1px 1px 10px rgba(238, 238, 238, 0.9);
+		box-shadow: inset 1px 1px 10px rgba(238, 238, 238, 0.9);
+		border-radius: 7px; -webkit-border-radius: 7px; -moz-border-radius: 7px;
+	}
+	form.custom div.custom.dropdown a.selector { position: absolute; width: 26px; height: 26px; display: block; background: url(../images/misc/custom-form-sprites.png) -14px 0 no-repeat; right: 4px; top: 8px; border-left: solid 1px #ddd; }
+	form.custom div.custom.dropdown:hover a.selector,
+	form.custom div.custom.dropdown.open a.selector { background-position: -14px -26px; }
+	
+	form.custom div.custom.dropdown ul { position: absolute; width: auto; display: none; margin: 0; left: 0px; top: 40px; margin: 0; padding: 0; background: rgba(255,255,255,0.9); border: solid 1px #ddd; z-index: 10; }
+	form.custom div.custom.dropdown ul li { cursor: pointer; padding: 3px 38px 3px 6px; margin: 0; }
+	form.custom div.custom.dropdown ul li.selected { background: url(../images/misc/custom-form-sprites.png) right -52px no-repeat; }
+	form.custom div.custom.dropdown ul li:hover { background-color: #2a85e8; color: #fff; }
+	form.custom div.custom.dropdown ul li.selected:hover { background: url(../images/misc/custom-form-sprites.png) #2a85e8 right -78px no-repeat; }
+	form.custom div.custom.dropdown ul.show { display: block; }
+	
+	form.custom div.custom.dropdown.open ul { display: block; }
+
+	/* Artfully masterminded by ZURB  */
+
+/* -------------------------------------------------- 
+   Table of Contents
+-----------------------------------------------------
+:: Shared Styles
+:: Page Name 1
+:: Page Name 2
+*/
+
+
+/* -----------------------------------------
+   Shared Styles
+----------------------------------------- */
+
+
+
+
+
+/* -----------------------------------------
+   Homepage
+----------------------------------------- */
+
+h1.centered { text-align: center; margin-bottom: 0; }
+h5.centered { text-align: center; }
+
+.show-on-phones h1.centered { font-size: 24px; font-size: 2.4rem; }
+.show-on-phones h5.centered { font-size: 12px; font-size: 1.2rem; margin-bottom: 20px; padding-bottom: 10px; border-bottom: 1px solid #ddd; }
+
+
+
+/* -----------------------------------------
+   Page Name 2
+----------------------------------------- */
+
+
+/* --------------------------------------------------
+	:: Grid
+	-------------------------------------------------- */
+	
+	/* Tablet screens */
+	@media (max-width: 1600px) {
+		.row .six.columns { width: 100%; }
+		body {  min-width: 0; margin-left: 0px; margin-right: 0px; padding-left: 0px; padding-right: 0px; }
+		
+	}
+	
+	
+	/* Mobile */
+	@media (max-width: 30em) {
+		body { -webkit-text-size-adjust: none; }
+		
+		.row, body, .container, .container.obsah { width: 100%; min-width: 0; margin-left: 0px; margin-right: 0px; padding-left: 0px; padding-right: 0px; }
+		.row .row .column, .row .row .columns { padding: 0; }
+		.column, .columns { width: auto !important; float: none; margin-left: 0px; margin-right: 0px; padding-left: 10px; padding-right: 10px;}
+		.column:last-child, .columns:last-child { margin-right: 0px; }
+		.offset-by-one, .offset-by-two, .offset-by-three, .offset-by-four, .offset-by-five, .offset-by-six, .offset-by-seven, .offset-by-eight, .offset-by-nine, .offset-by-ten, .offset-by-eleven { margin-left: 0% !important; }
+	}
+	
+	
+/* --------------------------------------------------
+	:: Block Grids
+	-------------------------------------------------- */	
+	
+	@media (max-width: 30em) {
+		.block-grid.mobile li { float: none; width: 100%; }
+	}
+	
+	
+
+/* -------------------------------------------------- 
+	:: Mobile Visibility Affordances
+---------------------------------------------------*/
+	
+	
+	.show-on-phones { display: none !important; }	
+	.show-on-tablets { display: none !important; }
+	.show-on-desktops { display: block; }
+	
+	.hide-on-phones { display: block !important; }	
+	.hide-on-tablets { display: block !important; }
+	.hide-on-desktops { display: none !important; }
+/*	
+	
+	@media (min-width: 49em), (device-width: 75em) {
+		.hide-on-phones { display: block !important; }
+		.hide-on-tablets { display: none !important; }
+		.hide-on-desktops { display: block !important; }
+		
+		.show-on-phones { display: none !important; }
+		.show-on-tablets { display: block !important; }
+		.show-on-desktops { display: none !important; }
+	}
+	
+	*/	
+	@media (max-width: 30em) {
+		.hide-on-phones { display: block !important; }
+		.hide-on-tablets { display: none !important; }
+		.hide-on-desktops { display: block !important; }
+		
+		.show-on-phones { display: block !important; }
+		.show-on-tablets { display: none !important; }
+		.show-on-desktops { display: none !important; }
+	}
+		@media (max-width: 360px) {
+		.hide-on-phones { display: none !important; }
+		.hide-on-tablets { display: none !important; }
+		.hide-on-desktops { display: block !important; }
+		
+		.show-on-phones { display: block !important; }
+		.show-on-tablets { display: none !important; }
+		.show-on-desktops { display: none !important; }
+	}
+	
+	
+/* -------------------------------------------------- 
+	:: Forms
+---------------------------------------------------*/	
+
+
+	@media (max-width: 30em) {
+		/*input.input-text, input.input-text.oversize, textarea,
+		form.nice input.input-text, form.nice input.input-text.oversize, form.nice textarea { display: block; width: 96%; padding: 6px 2% 4px; font-size: 18px; }*/
+		form.nice input.input-text, form.nice input.input-text.oversize, form.nice textarea { -webkit-border-radius: 2px; -moz-border-radius: 2px; }
+		form.nice small.error { padding: 6px 2%; display: block; }
+		form.nice .small + .error { width: auto; }
+		form.nice .medium + .error { width: auto; }
+		form.nice .large + .error { width: auto; }	
+	}
+	
+	
+/* -------------------------------------------------- 
+	:: UI
+---------------------------------------------------*/	
+	
+	/* Buttons */
+	@media (max-width: 30em) {
+		.button { display: block; }
+		button.button { width: 100%; padding-left: 0px; padding-right: 0px; }
+	}
+	
+	/* Tabs */
+	
+	@media (max-width: 30em) {
+		dl.tabs.mobile, dl.nice.tabs.mobile { width: auto; margin: 20px -20px 40px; height: auto; }
+		dl.tabs.mobile dt, dl.tabs.mobile dd, dl.nice.tabs.mobile dt, dl.nice.tabs.mobile dd { float: none; height: auto; }
+		
+	    dl.tabs.mobile dd a { display: block; width: auto; height: auto; padding: 18px 20px; line-height: 1; border: solid 0px #ccc; border-width: 1px 0px 0px; margin: 0; color: #555; background: #eee; font-size: 15px; font-size: 1.5rem; }
+		dl.tabs.mobile dd a.active { height: auto; margin: 0; border-width: 1px 0px 0px; }
+	
+		.nice.tabs.mobile { border-bottom: solid 1px #ccc; height: auto; }
+		.nice.tabs.mobile dd a { padding: 18px 20px; border: none; border-left: none; border-right: none; border-top: 1px solid #ccc; background: #fff; }
+		.nice.tabs.mobile dd a.active { border: none; background: #00a6fc; color: #fff; margin: 0; position: static; top: 0px; height: auto; }
+		.nice.tabs.mobile dd:first-child a.active { margin: 0; }
+		
+		dl.contained.mobile, dl.nice.contained.mobile { margin-bottom: 0px; }
+    	dl.contained.tabs.mobile dd a { padding: 18px 20px; }
+    	dl.nice.contained.tabs.mobile dd a { padding: 18px 20px; }
+	}
+	
+	/* navigace */
+	@media (max-width: 30em) {
+		
+		.nav-collapse dl {
+		  margin: 0;
+		  padding: 0;
+		  width: 100%;
+		  display: block;
+		  list-style: none;
+		}
+		
+		.nav-collapse dd{
+		  width: 100%;
+		  display: block;
+		}
+		/*header h1{padding: 0.7em 0 0.4em 0; float: none; width: 100%}
+		header dl{padding: 3.2em 0 0.4em 0; float: left; width: 100%;  }
+		*/
+	}.js .nav-collapse {
+    position: relative;
+    max-height: none;
   
-	<!-- Included CSS Files -->
-	<!-- These files are being included - to omit files, move them to the block below. -->
+}
 
-	<link rel="stylesheet" href="stylesheets/webfonts.css" type="text/css" charset="utf-8">
-	<link rel="stylesheet" href="stylesheets/globals.css">
-	<link rel="stylesheet" href="stylesheets/ui.css">
-	<link rel="stylesheet" href="stylesheets/forms.css">
-	<link rel="stylesheet" href="stylesheets/orbit.css">
-	<link rel="stylesheet" href="stylesheets/reveal.css">
-	<link rel="stylesheet" href="stylesheets/app.css">
-	<link rel="stylesheet" href="stylesheets/mobile.css">
-	<link rel="stylesheet" href="stylesheets/responsive-nav.css">
-	<link href='http://fonts.googleapis.com/css?family=Armata|Exo:400,600&subset=latin,latin-ext' rel='stylesheet' type='text/css'>	
-	<!--[if lte IE 8]><script src="respond.js"></script><![endif]-->
-	<script src="javascripts/responsive-nav.js"></script>
+.nav-collapse.opened {
+  max-height: 9999px; 
+  margin-bottom: 2em;
+}
+  #nav-toggle {
+    display: none;
+  }
+  
+@media handheld, (max-width: 500em){
+  .js .nav-collapse {
+	  clip: rect(0 0 0 0);
+	  max-height: 0;
+	  position: absolute;
+	  display: block;
+	  overflow: hidden;
+	  zoom: 1;
+  }
+  #nav-toggle {
+    display: block;
+  }
+}
 
-	<!--[if lt IE 9]>
-		<link rel="stylesheet" href="public/css/ie.css">
-	<![endif]-->
 
 
-	<!-- IE Fix for HTML5 Tags -->
-	<!--[if lt IE 9]>
-		<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
-	<![endif]-->
+@-webkit-viewport { width: device-width; }
+@-moz-viewport { width: device-width; }
+@-ms-viewport { width: device-width; }
+@-o-viewport { width: device-width; }
+@viewport { width: device-width; }
 
+.nav-collapse,
+.nav-collapse * {
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+.nav-collapse, .nav-collapse ul {
+  list-style: none;
+  width: 79%;
+  float: right;
+   
+}
+
+.nav-collapse ul {
+  width: 100%;
+  padding: 3.2em 0 0.4em 2em;
+}
+
+@media handheld, (max-width: 500em){
+	.nav-collapse, .nav-collapse ul{
+		 float: left; 
+		 width: 100%;
+		 padding: 0;
+		 padding: 1em 0 1em 0;
+	}
+}
+
+
+.nav-collapse li {
+  float: left;
+  /*padding: 0 2.3%;*/
+  margin:0;
+  display: block;
+      /*width: 11.4%;
+    *width: 11%; /* IE7 Hack */
+    _width: 10%; /* IE6 Hack */
+}
+
+@media handheld, (max-width: 500em){
+  .nav-collapse li {
+  	 width: 100%;
+  }
+}
+
+.nav-collapse a {
+    text-align: center;
+    border: 0;
+    border-bottom: 0;
+    border-right: 0;
+    float: right; 
+    width: 100%;
+    padding: 0.7em 0 0.7em;
+	color: #fff; 
+	text-align: center; 
+	/*font-weight: 300; */
+	font-size: 1.5rem;
+	
+	}
+
+@media handheld, (max-width: 500em){
+  .nav-collapse a{
+	  text-decoration: none;
+	  width: 100%;
+	  background-image: linear-gradient(to right, white 50%, rgba(0,0,0,0) 0%);
+		background-position: bottom;
+		background-size: 5px 1px;
+		background-repeat: repeat-x;
+	  float: left;
+	  margin: 1px;
+	padding: 1em 0 1em;
+  }
+
+}
+
+.nav-collapse a:hover{
+	/*text-decoration: underline; 
+	 color: #11639d; */
+	font-weight: 600;
+	letter-spacing: -0.1rem;
+}
+
+
+.nav-collapse ul ul a {
+  background: #ca3716;
+  padding-left: 2em;
+}
+
+@media handheld, (max-width: 500em){
+  .nav-collapse ul ul a {
+    display: block;
+  }
+}
+
+#nav-toggle {
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  border: 0;
+  cursor: pointer;
+  width: 55px;
+  height: 55px;
+  float: right;
+  text-indent: -9999px;
+  overflow: hidden;
+  background: url("../images/hamburger.gif") no-repeat 50% 50%;
+}
+
+@media screen and (-webkit-min-device-pixel-ratio: 1.3), screen and (min--moz-device-pixel-ratio: 1.3), screen and (-o-min-device-pixel-ratio: 2 / 1), screen and (min-device-pixel-ratio: 1.3), screen and (min-resolution: 192dpi), screen and (min-resolution: 2dppx) {
+  #nav-toggle {
+    background-image: url("../images/hamburger-retina.gif");
+    -webkit-background-size: 100px 100px;
+    -moz-background-size: 100px 100px;
+    -o-background-size: 100px 100px;
+    background-size: 100px 100px;
+  }
+}
+
+
+/* ── Filter bar ── */
+#filter-hint {
+  text-align: center;
+  font-size: 9px;
+  font-family: 'Armata', sans-serif;
+  letter-spacing: 0.12em;
+  color: rgba(255,255,255,0.7);
+  padding-bottom: 24px;
+  margin-top: -6px;
+}
+#filter-bar {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 8px;
+  padding: 0 16px 16px;
+}
+.fchip {
+  display: inline-flex;
+  align-items: center;
+  gap: 0px;
+  background: rgba(30,60,90,0.55); /* Firefox fallback - no backdrop-filter */
+  background: rgba(0, 0, 0, 0);
+  -webkit-backdrop-filter: blur(8px);
+  backdrop-filter: blur(8px);
+  color: rgba(255,255,255,0.9);
+  font-size: 9px;
+  font-family: 'Armata', sans-serif;
+  letter-spacing: 0.08em;
+  padding: 4px 12px 4px 8px;
+  border-radius: 20px;
+  border: 1px solid rgba(255,255,255,1);
+  cursor: pointer;
+  transition: background 0.2s, border-color 0.2s, padding 0.2s;
+  user-select: none;
+  overflow: hidden;
+}
+.fchip .chip-check {
+  width: 0;
+  overflow: hidden;
+  transition: width 0.2s ease;
+  display: flex;
+  align-items: center;
+}
+.fchip .chip-check svg {
+  flex-shrink: 0;
+  margin-right: 4px;
+}
+.fchip.active .chip-check {
+  width: 16px;
+}
+.fchip.inactive {
+  border: 1px solid rgba(255,255,255,0.50);
+  color: rgba(255,255,255,1);
+  padding: 4px 12px;
+}
+</style>
+
+<style id="custom-fixes">
+/* Hide burger icon completely */
+#nav-toggle { display: none !important; }
+
+/* Hide the mobile nav completely on desktop - only show desktop nav links */
+#nav.nav-collapse { 
+  display: none !important;
+  max-height: 0 !important;
+  overflow: hidden !important;
+}
+
+/* Remove dashed line from nav links */
+.nav-collapse a,
+.nav-collapse a:hover {
+  background-image: none !important;
+  border-top: none !important;
+  border-bottom: none !important;
+}
+
+/* Remove any top line from container/header */
+.container, .container > header, .row {
+  border-top: none !important;
+}
+
+/* Show desktop nav (the hide-on-desktops items) inline in header */
+/* Actually the desktop nav shows as h1 text links in the original */
+/* The nav-collapse is the MOBILE nav - hide it on desktop */
+</style>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/masonry/4.2.2/masonry.pkgd.min.js"></script>
+
+
+<style id="masonry-override">
+/* Hide category headings + mobile buttons */
+.boxtrans h3, .hide-on-desktops { display: none !important; }
+#design, #ci, #web { display: none !important; }
+
+/* ── Flat container ── */
+#masonry-flat {
+  position: relative;
+  margin: 0 16px 80px;   /* margin not padding — Masonry reads offsetWidth */
+  padding-bottom: 80px;
+  box-sizing: border-box;
+}
+
+/* Grid sizer: Masonry column width reference */
+.grid-sizer { width: calc(20% - 9.6px); }
+
+/* Cards */
+.mcard {
+  width: calc(20% - 9.6px);
+  margin-bottom: 12px;
+  background: rgba(255,255,255,0.14);
+  border-radius: 6px;
+  overflow: hidden;
+  box-sizing: border-box;
+  position: relative;
+  box-shadow: none !important;
+}
+
+/* ── Pills ── */
+.pills-wrap {
+  position: absolute;
+  top: 10px; left: 10px;
+  display: flex; gap: 5px; flex-wrap: wrap;
+  z-index: 10; pointer-events: none;
+}
+.cat-pill {
+  background: rgba(30,60,90,0.55); /* fallback */
+  background: rgba(0,0,0,0.08);
+  -webkit-backdrop-filter: blur(8px);
+  backdrop-filter: blur(8px);
+  color: rgba(255,255,255,0.9);
+  font-size: 9px;
+  font-family: 'Armata', sans-serif;
+  letter-spacing: 0.08em;
+  padding: 3px 9px;
+  border-radius: 20px;
+  border: 1px solid rgba(255,255,255,0.50);
+}
+
+/* ── Hover overlay ── */
+.nahled { position: relative; overflow: hidden; cursor: pointer; }
+.nahled .hover-overlay {
+  position: absolute; inset: 0;
+  background: rgba(0,0,0,0);
+  display: flex; align-items: center; justify-content: center;
+  transition: background 0.25s;
+  pointer-events: none;
+}
+.nahled:hover .hover-overlay { background: rgba(0,0,0,0.3); }
+.nahled .hover-overlay svg {
+  opacity: 0; transform: scale(0.85);
+  transition: opacity 0.25s, transform 0.25s;
+}
+.nahled:hover .hover-overlay svg { opacity: 1; transform: scale(1); }
+.nahled img { display: block; width: 100%; }
+
+/* ── Card text ── */
+.mcard h4 {
+  margin: 12px 12px 0;
+  font-size: 13px;
+  color: #fff;
+  padding-bottom: 8px;
+  border-bottom: 1px solid rgba(255,255,255,0.15);
+}
+.mcard h5, .card-detail { margin-top: 8px; }
+.mcard h5 { margin: 0 12px 10px; font-size: 12px; line-height: 1.7; color: rgba(255,255,255,0.8); font-weight: normal; }
+.card-detail { padding: 0 12px 10px; }
+.card-detail-block { margin-bottom: 12px; }
+.card-detail-label {
+  display: inline-block;
+  font-size: 8px; letter-spacing: 0.18em; text-transform: uppercase;
+  color: rgba(255,255,255,0.88);
+  border: 1px solid rgba(255,255,255,0.3);
+  border-radius: 20px;
+  padding: 2px 8px;
+  margin-bottom: 8px;
+  font-family: 'Armata', sans-serif;
+}
+.card-detail-text { font-size: 12px; line-height: 1.7; color: rgba(255,255,255,0.8); }
+
+/* ── Hidden cards (Masonry ignores display:none via querySelectorAll) ── */
+.mcard.mhidden { display: none !important; }
+
+/* ── Lightbox ── */
+#lb {
+  display: none; position: fixed; inset: 0;
+  background: rgba(0,0,0,0.9); z-index: 9999;
+  align-items: flex-start; justify-content: center;
+  overflow: auto; cursor: zoom-out;
+  padding: 40px;
+}
+#lb.open { display: flex; }
+#lb img { max-width: none; max-height: none; border-radius: 4px; cursor: zoom-out; }
+
+/* ── Responsive ── */
+@media (max-width: 1200px) {
+  .grid-sizer, .mcard { width: calc(25% - 9px) !important; }
+}
+@media (max-width: 1100px) {
+  .grid-sizer, .mcard { width: calc(25% - 9px) !important; }
+}
+@media (max-width: 860px) {
+  .grid-sizer, .mcard { width: calc(33.333% - 8px) !important; }
+}
+@media (max-width: 720px) {
+  .grid-sizer, .mcard { width: calc(50% - 6px) !important; }
+}
+@media (max-width: 480px) {
+  .grid-sizer, .mcard { width: 100% !important; }
+}
+</style>
 </head>
 <body>
+<script>
+// Suppress non-critical errors from old jQuery/plugins
+window.onerror = function(msg, src, line, col, err) { return true; };
+</script>
+
+
 	
 <img class="pozadi" src="images/blured_2.jpg"> 
 
@@ -52,21 +1353,21 @@
 
 			<div class="row">
 				<div class="twelve columns">
-				    <div id="nav">
+				    <div id="nav" class="nav-collapse nav-collapse-0 closed" style="transition: max-height 284ms; position: absolute;" aria-hidden="true">
 					  <ul>
 						<li class="hide-on-desktops"><a href="#design">DESIGN</a></li>
 						<li class="hide-on-desktops"><a href="#ci">CORPORATE IDENTITY</a></li>
 						<li class="hide-on-desktops"><a href="#web">WEBDESIGN</a></li>
 						<!--<li class="hide-on-desktops"><a href="#online">NEWSLETTERY A BANNERY</a></li>
 						<li><a href="cv.pdf">CV</a></li>-->
-						<li><a href="cv_en.pdf">CV (en)</a></li>
+						<li><a href="https://omnirobot-bot.github.io/Portfolio2015/cv_en.pdf">CV (en)</a></li>
 						
 					  </ul>
 					</div>
 				
-					<button id="nav-toggle">Menu</button>
+					<button id="nav-toggle" aria-hidden="false">Menu</button>
 					
-					<h1><img src="images/logo.svg" alt="logo" /></h1>
+					<h1><img src="images/logo.svg" alt="logo"></h1>
 				</div> 
 			</div> 	
 
@@ -83,11 +1384,11 @@
 	
 					<div class="row">
 							<div class="nahled">
-								<a href="images/design/cinzano_bartender_kit_Custom_leater_bag__s01_c01.jpg">
-									<img src="images/design/cinzano_bartender_kit_Custom_leater_bag__s01_c01.jpg">
+								<a href="#">
+									<img src="images/cinzano_bartender_kit_Custom_leater_bag__s01_c01.jpg">
 								</a>
 							</div>
-							<h4>Cinzano</h4>
+							<h4>Cinzano I</h4>
 							<h5>Shake kit koncept</h5>
 					</div>
 					
@@ -95,29 +1396,29 @@
 					
 					<div class="row">
 							<div class="nahled">
-								<a href="images/design/cinzano_bartender_kit_Fabric_material_bag__s01_c01_a.jpg">
-									<img src="images/design/cinzano_bartender_kit_Fabric_material_bag__s01_c01_a.jpg">
+								<a href="#">
+									<img src="images/cinzano_bartender_kit_Fabric_material_bag__s01_c01_a.jpg">
 								</a>
 							</div>
-							<h4>Cinzano</h4>
-							<h5>Shake kit koncept</h5>
+							<h4>Cinzano II</h4>
+							
 					</div>
 					
 					
 					<div class="row">
 							<div class="nahled">
-								<a href="images/design/cinzano_bartender_kit_Suitcase__s01_c01_a.jpg">
-									<img src="images/design/cinzano_bartender_kit_Suitcase__s01_c01_a.jpg">
+								<a href="#">
+									<img src="images/cinzano_bartender_kit_Suitcase__s01_c01_a.jpg">
 								</a>
 							</div>
-							<h4>Cinzano</h4>
-							<h5>Shake kit koncept</h5>
+							<h4>Cinzano III</h4>
+							
 					</div>
 					
 					<div class="row">
 							<div class="nahled">
-								<a href="images/design/adidas_chaos_ITS_staff_advocacy_kit.jpg">
-									<img src="images/design/adidas_chaos_ITS_staff_advocacy_kit.jpg">
+								<a href="#">
+									<img src="images/adidas_chaos_ITS_staff_advocacy_kit.jpg">
 								</a>
 							</div>
 							<h4>Adidas</h4>
@@ -126,8 +1427,8 @@
 					
 					<div class="row">
 							<div class="nahled">
-								<a href="images/design/adidas_extra_boost_staff_advocacy_kit.jpg">
-									<img src="images/design/adidas_extra_boost_staff_advocacy_kit.jpg">
+								<a href="#">
+									<img src="images/adidas_extra_boost_staff_advocacy_kit.jpg">
 								</a>
 							</div>
 							<h4>Adidas</h4>
@@ -143,7 +1444,7 @@
 									<img src="images/design/bread_gap_budejovicka.jpg">
 								</a>
 							</div>
-							<h4>Bread gap</h4>
+							<h4>Bread Gap</h4>
 							<h5>potisk výlohy a interier miniprodejny vzniklé z výlohy</h5>
 					</div>
 					
@@ -153,22 +1454,22 @@
 					
 
 						
-					<div class="row">	
+					<!-- <div class="row">	
 							<div class="nahled">
-								<a href="images/design/Dynamic_v3_final_big.jpg">
-									<img src="images/design/Dynamic_v3_final-copy.jpg">
+								<a href="#">
+									<img src="images/Dynamic_v3_final-copy.jpg">
 								</a>
 							</div>
 							<h4>Kamufláž na ultralight Dynamic</h4>
 												
-					</div>
+					</div> -->
 					
 
 						
 					<div class="row">	
 							<div class="nahled">
-								<a href="images/design/Spiderman_furniture.jpg">
-									<img src="images/design/Spiderman_furniture.jpg">
+								<a href="#">
+									<img src="images/Spiderman_furniture.jpg">
 								</a>
 							</div>
 							<h4>Spiderman multifunkční dětský nábytek</h4>
@@ -181,8 +1482,8 @@
 					<div class="row">
 						
 							<div class="nahled">
-								<a href="images/design/barbie_colourV3a4.jpg">
-									<img src="images/design/barbie_colourV3a4.jpg">
+								<a href="#">
+									<img src="images/barbie_colourV3a4.jpg">
 								</a>
 							</div>
 							<h4>Barbie kolekce dětského nábytku</h4>
@@ -194,8 +1495,8 @@
 					<div class="row">
 
 							<div class="nahled">
-								<a href="images/design/sketch_batman_draft_C_perspective.jpg">
-									<img src="images/design/sketch_batman_draft_C_perspective.jpg">
+								<a href="#">
+									<img src="images/sketch_batman_draft_C_perspective.jpg">
 								</a>
 							</div>
 							<h4>Batman dětský batoh s pláštěnkou</h4>
@@ -204,8 +1505,8 @@
 						
 					<div class="row">
 							<div class="nahled">
-								<a href="images/design/teen_bags.jpg">
-									<img src="images/design/teen_bags.jpg">
+								<a href="#">
+									<img src="images/teen_bags.jpg">
 								</a>
 							</div>
 							<h4>Teenage batohy </h4>
@@ -217,8 +1518,8 @@
 					<div class="row">
 						
 							<div class="nahled">
-								<a href="images/design/smartcat_collection.jpg">
-									<img src="images/design/smartcat_collection.jpg">
+								<a href="#">
+									<img src="images/smartcat_collection.jpg">
 								</a>
 							</div>
 							<h4>Teenage kolekce</h4>
@@ -228,8 +1529,8 @@
 					<div class="row">
 						
 							<div class="nahled">
-								<a href="images/design/vecko_s01_c01_aa.jpg">
-									<img src="images/design/vecko_s01_c01_aa.jpg">
+								<a href="#">
+									<img src="images/vecko_s01_c01_aa.jpg">
 								</a>
 							</div>
 							<h4>"véčko" koncept</h4>
@@ -263,22 +1564,22 @@
 					
 					<div class="row">
 							<div class="nahled">
-								<a href="images/ci/passion_chocolate_set_s03_a4.jpg">
-									<img src="images/ci/passion_chocolate_set_s03_a4.jpg">
+								<a href="#">
+									<img src="images/passion_chocolate_set_s03_a4.jpg">
 								</a>
 							</div>
-							<h4>Passion chocolate</h4>
+							<h4>Passion Chocolate</h4>
 							<h5>Logo a vizuální styl, design obalů, letáky, brožury</h5>
 					</div>
 					
 										
 					<div class="row">
 							<div class="nahled">
-								<a href="images/ci/breadgap.jpg">
-									<img src="images/ci/breadgap.jpg">
+								<a href="#">
+									<img src="images/breadgap.jpg">
 								</a>
 							</div>
-							<h4>Bread gap</h4>
+							<h4>Bread Gap</h4>
 							<h5>Logo a vizuální styl, letáky, návrhy obalu</h5>
 					</div>
 					<!-- 
@@ -288,7 +1589,7 @@
 									<img src="images/ci/bd-extra.jpg">
 								</a>
 							</div>
-							<h4>Blu-ray EXTRA</h4>
+							<h4>Blu-ray Extra</h4>
 							<h5>logo a vizuální styl, design časopisu</h5>
 					</div>
 					
@@ -419,8 +1720,8 @@
 
 					<div class="row">
 						<div class="nahled">
-							<a href="images/web/responsive_xbtc_02.jpg">
-								<img src="images/web/responsive_xbtc_02.jpg">
+							<a href="#">
+								<img src="images/responsive_xbtc_02.jpg">
 							</a>
 						</div>
 						<h4>XBTC.cz</h4>
@@ -429,21 +1730,21 @@
 
 					<div class="row">
 						<div class="nahled">
-							<a href="images/web/responsive_bread_gap_02.jpg">
-								<img src="images/web/responsive_bread_gap_02.jpg">
+							<a href="#">
+								<img src="images/responsive_bread_gap_02.jpg">
 							</a>
 						</div>
-						<h4>Bread gap</h4>
+						<h4>Bread Gap</h4>
 						<h5>Design/HTML5/CSS3 </h5>
 					</div>
 					
 					<div class="row">
 						<div class="nahled">
-							<a href="images/web/responsive_CP.jpg">
-								<img src="images/web/responsive_CP.jpg">
+							<a href="#">
+								<img src="images/responsive_CP.jpg">
 							</a>
 						</div>
-						<h4>ČESKÁ POZICE aplikace</h4>
+						<h4>Česká pozice aplikace</h4>
 						<h5>HTML5/CSS3</h5>
 					</div>
 					
@@ -454,7 +1755,7 @@
 								<img src="images/web/cp.jpg">
 							</a>
 						</div>
-						<h4>ČESKÁ POZICE</h4>
+						<h4>Česká pozice</h4>
 						<h5>html/css3</h5>
 					</div>
 					
@@ -547,27 +1848,903 @@
 	<!-- Included JS Files  -->
 	<!-- These files are being included - to omit files, move them to the block below. -->
 
-	<script src="javascripts/jquery-1.5.1.min.js"></script>
-	<script src="javascripts/jquery.reveal.js"></script>
-	<script src="javascripts/jquery.orbit-1.3.0.js"></script>
-	<script src="javascripts/forms.jquery.js"></script>
-	<script src="javascripts/jquery.customforms.js"></script>
-	<script src="javascripts/jquery.placeholder.js"></script>
-	<script src="javascripts/app.js"></script>
+	<script src="Martin%20S%CC%8Cte%CC%8Cch%20_%20PORTFOLIO_files/jquery-1.5.1.min.js"></script>
+	<script src="Martin%20S%CC%8Cte%CC%8Cch%20_%20PORTFOLIO_files/jquery.reveal.js"></script>
+	<script src="Martin%20S%CC%8Cte%CC%8Cch%20_%20PORTFOLIO_files/jquery.orbit-1.3.0.js"></script>
+	<script src="Martin%20S%CC%8Cte%CC%8Cch%20_%20PORTFOLIO_files/forms.jquery.js"></script>
+	<script src="Martin%20S%CC%8Cte%CC%8Cch%20_%20PORTFOLIO_files/jquery.customforms.js"></script>
+	<script src="Martin%20S%CC%8Cte%CC%8Cch%20_%20PORTFOLIO_files/jquery.placeholder.js"></script>
+	<script src="Martin%20S%CC%8Cte%CC%8Cch%20_%20PORTFOLIO_files/app.js"></script>
 	
 	
 
 <script>
-      var navigation = responsiveNav("#nav", {
-        customToggle: "#nav-toggle"
-      });
+      try {
+        var navigation = responsiveNav("#nav", {
+          customToggle: "#nav-toggle"
+        });
+      } catch(e) { /* nav handled via CSS */ }
     </script>
+
+
+
+
+
+
+
+
+
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+<script>
+/* jQuery loaded via CDN below */
+/*! responsive-nav.js 1.0.32
+ * https://github.com/viljamis/responsive-nav.js
+ * http://responsive-nav.com
+ *
+ * Copyright (c) 2014 @viljamis
+ * Available under the MIT license
+ */
+
+(function (document, window, index) {
+
+  "use strict";
+
+  var responsiveNav = function (el, options) {
+
+    var computed = !!window.getComputedStyle;
+    
+    // getComputedStyle polyfill
+    if (!computed) {
+      window.getComputedStyle = function(el) {
+        this.el = el;
+        this.getPropertyValue = function(prop) {
+          var re = /(\-([a-z]){1})/g;
+          if (prop === "float") {
+            prop = "styleFloat";
+          }
+          if (re.test(prop)) {
+            prop = prop.replace(re, function () {
+              return arguments[2].toUpperCase();
+            });
+          }
+          return el.currentStyle[prop] ? el.currentStyle[prop] : null;
+        };
+        return this;
+      };
+    }
+    /* exported addEvent, removeEvent, getChildren, setAttributes, addClass, removeClass, forEach */
+    // fn arg can be an object or a function, thanks to handleEvent
+    // read more at: http://www.thecssninja.com/javascript/handleevent
+    var addEvent = function (el, evt, fn, bubble) {
+        if ("addEventListener" in el) {
+          // BBOS6 doesn't support handleEvent, catch and polyfill
+          try {
+            el.addEventListener(evt, fn, bubble);
+          } catch (e) {
+            if (typeof fn === "object" && fn.handleEvent) {
+              el.addEventListener(evt, function (e) {
+                // Bind fn as this and set first arg as event object
+                fn.handleEvent.call(fn, e);
+              }, bubble);
+            } else {
+              throw e;
+            }
+          }
+        } else if ("attachEvent" in el) {
+          // check if the callback is an object and contains handleEvent
+          if (typeof fn === "object" && fn.handleEvent) {
+            el.attachEvent("on" + evt, function () {
+              // Bind fn as this
+              fn.handleEvent.call(fn);
+            });
+          } else {
+            el.attachEvent("on" + evt, fn);
+          }
+        }
+      },
+    
+      removeEvent = function (el, evt, fn, bubble) {
+        if ("removeEventListener" in el) {
+          try {
+            el.removeEventListener(evt, fn, bubble);
+          } catch (e) {
+            if (typeof fn === "object" && fn.handleEvent) {
+              el.removeEventListener(evt, function (e) {
+                fn.handleEvent.call(fn, e);
+              }, bubble);
+            } else {
+              throw e;
+            }
+          }
+        } else if ("detachEvent" in el) {
+          if (typeof fn === "object" && fn.handleEvent) {
+            el.detachEvent("on" + evt, function () {
+              fn.handleEvent.call(fn);
+            });
+          } else {
+            el.detachEvent("on" + evt, fn);
+          }
+        }
+      },
+    
+      getChildren = function (e) {
+        if (e.children.length < 1) {
+          throw new Error("The Nav container has no containing elements");
+        }
+        // Store all children in array
+        var children = [];
+        // Loop through children and store in array if child != TextNode
+        for (var i = 0; i < e.children.length; i++) {
+          if (e.children[i].nodeType === 1) {
+            children.push(e.children[i]);
+          }
+        }
+        return children;
+      },
+    
+      setAttributes = function (el, attrs) {
+        for (var key in attrs) {
+          el.setAttribute(key, attrs[key]);
+        }
+      },
+    
+      addClass = function (el, cls) {
+        if (el.className.indexOf(cls) !== 0) {
+          el.className += " " + cls;
+          el.className = el.className.replace(/(^\s*)|(\s*$)/g,"");
+        }
+      },
+    
+      removeClass = function (el, cls) {
+        var reg = new RegExp("(\\s|^)" + cls + "(\\s|$)");
+        el.className = el.className.replace(reg, " ").replace(/(^\s*)|(\s*$)/g,"");
+      },
+    
+      // forEach method that passes back the stuff we need
+      forEach = function (array, callback, scope) {
+        for (var i = 0; i < array.length; i++) {
+          callback.call(scope, i, array[i]);
+        }
+      };
+
+    var nav,
+      opts,
+      navToggle,
+      styleElement = document.createElement("style"),
+      htmlEl = document.documentElement,
+      hasAnimFinished,
+      isMobile,
+      navOpen;
+
+    var ResponsiveNav = function (el, options) {
+        var i;
+
+        // Default options
+        this.options = {
+          animate: true,                    // Boolean: Use CSS3 transitions, true or false
+          transition: 284,                  // Integer: Speed of the transition, in milliseconds
+          label: "Menu",                    // String: Label for the navigation toggle
+          insert: "before",                 // String: Insert the toggle before or after the navigation
+          customToggle: "",                 // Selector: Specify the ID of a custom toggle
+          closeOnNavClick: false,           // Boolean: Close the navigation when one of the links are clicked
+          openPos: "relative",              // String: Position of the opened nav, relative or static
+          navClass: "nav-collapse",         // String: Default CSS class. If changed, you need to edit the CSS too!
+          navActiveClass: "js-nav-active",  // String: Class that is added to <html> element when nav is active
+          jsClass: "js",                    // String: 'JS enabled' class which is added to <html> element
+          init: function(){},               // Function: Init callback
+          open: function(){},               // Function: Open callback
+          close: function(){}               // Function: Close callback
+        };
+
+        // User defined options
+        for (i in options) {
+          this.options[i] = options[i];
+        }
+
+        // Adds "js" class for <html>
+        addClass(htmlEl, this.options.jsClass);
+
+        // Wrapper
+        this.wrapperEl = el.replace("#", "");
+
+        // Try selecting ID first
+        if (document.getElementById(this.wrapperEl)) {
+          this.wrapper = document.getElementById(this.wrapperEl);
+
+        // If element with an ID doesn't exist, use querySelector
+        } else if (document.querySelector(this.wrapperEl)) {
+          this.wrapper = document.querySelector(this.wrapperEl);
+
+        // If element doesn't exists, stop here.
+        } else {
+          throw new Error("The nav element you are trying to select doesn't exist");
+        }
+
+        // Inner wrapper
+        this.wrapper.inner = getChildren(this.wrapper);
+
+        // For minification
+        opts = this.options;
+        nav = this.wrapper;
+
+        // Init
+        this._init(this);
+      };
+
+    ResponsiveNav.prototype = {
+
+      // Public methods
+      destroy: function () {
+        this._removeStyles();
+        removeClass(nav, "closed");
+        removeClass(nav, "opened");
+        removeClass(nav, opts.navClass);
+        removeClass(nav, opts.navClass + "-" + this.index);
+        removeClass(htmlEl, opts.navActiveClass);
+        nav.removeAttribute("style");
+        nav.removeAttribute("aria-hidden");
+
+        removeEvent(window, "resize", this, false);
+        removeEvent(document.body, "touchmove", this, false);
+        removeEvent(navToggle, "touchstart", this, false);
+        removeEvent(navToggle, "touchend", this, false);
+        removeEvent(navToggle, "mouseup", this, false);
+        removeEvent(navToggle, "keyup", this, false);
+        removeEvent(navToggle, "click", this, false);
+
+        if (!opts.customToggle) {
+          navToggle.parentNode.removeChild(navToggle);
+        } else {
+          navToggle.removeAttribute("aria-hidden");
+        }
+      },
+
+      toggle: function () {
+        if (hasAnimFinished === true) {
+          if (!navOpen) {
+            this.open();
+          } else {
+            this.close();
+          }
+        }
+      },
+
+      open: function () {
+        if (!navOpen) {
+          removeClass(nav, "closed");
+          addClass(nav, "opened");
+          addClass(htmlEl, opts.navActiveClass);
+          addClass(navToggle, "active");
+          nav.style.position = opts.openPos;
+          setAttributes(nav, {"aria-hidden": "false"});
+          navOpen = true;
+          opts.open();
+        }
+      },
+
+      close: function () {
+        if (navOpen) {
+          addClass(nav, "closed");
+          removeClass(nav, "opened");
+          removeClass(htmlEl, opts.navActiveClass);
+          removeClass(navToggle, "active");
+          setAttributes(nav, {"aria-hidden": "true"});
+
+          if (opts.animate) {
+            hasAnimFinished = false;
+            setTimeout(function () {
+              nav.style.position = "absolute";
+              hasAnimFinished = true;
+            }, opts.transition + 10);
+          } else {
+            nav.style.position = "absolute";
+          }
+
+          navOpen = false;
+          opts.close();
+        }
+      },
+
+      resize: function () {
+        if (window.getComputedStyle(navToggle, null).getPropertyValue("display") !== "none") {
+
+          isMobile = true;
+          setAttributes(navToggle, {"aria-hidden": "false"});
+
+          // If the navigation is hidden
+          if (nav.className.match(/(^|\s)closed(\s|$)/)) {
+            setAttributes(nav, {"aria-hidden": "true"});
+            nav.style.position = "absolute";
+          }
+
+          this._createStyles();
+          this._calcHeight();
+        } else {
+
+          isMobile = false;
+          setAttributes(navToggle, {"aria-hidden": "true"});
+          setAttributes(nav, {"aria-hidden": "false"});
+          nav.style.position = opts.openPos;
+          this._removeStyles();
+        }
+      },
+
+      handleEvent: function (e) {
+        var evt = e || window.event;
+
+        switch (evt.type) {
+        case "touchstart":
+          this._onTouchStart(evt);
+          break;
+        case "touchmove":
+          this._onTouchMove(evt);
+          break;
+        case "touchend":
+        case "mouseup":
+          this._onTouchEnd(evt);
+          break;
+        case "click":
+          this._preventDefault(evt);
+          break;
+        case "keyup":
+          this._onKeyUp(evt);
+          break;
+        case "resize":
+          this.resize(evt);
+          break;
+        }
+      },
+
+      // Private methods
+      _init: function () {
+        this.index = index++;
+
+        addClass(nav, opts.navClass);
+        addClass(nav, opts.navClass + "-" + this.index);
+        addClass(nav, "closed");
+        hasAnimFinished = true;
+        navOpen = false;
+
+        this._closeOnNavClick();
+        this._createToggle();
+        this._transitions();
+        this.resize();
+
+        // IE8 hack
+        var self = this;
+        setTimeout(function () {
+          self.resize();
+        }, 20);
+
+        addEvent(window, "resize", this, false);
+        addEvent(document.body, "touchmove", this, false);
+        addEvent(navToggle, "touchstart", this, false);
+        addEvent(navToggle, "touchend", this, false);
+        addEvent(navToggle, "mouseup", this, false);
+        addEvent(navToggle, "keyup", this, false);
+        addEvent(navToggle, "click", this, false);
+
+        // Init callback
+        opts.init();
+      },
+
+      _createStyles: function () {
+        if (!styleElement.parentNode) {
+          styleElement.type = "text/css";
+          document.getElementsByTagName("head")[0].appendChild(styleElement);
+        }
+      },
+
+      _removeStyles: function () {
+        if (styleElement.parentNode) {
+          styleElement.parentNode.removeChild(styleElement);
+        }
+      },
+
+      _createToggle: function () {
+        if (!opts.customToggle) {
+          var toggle = document.createElement("a");
+          toggle.innerHTML = opts.label;
+          setAttributes(toggle, {
+            "href": "#",
+            "class": "nav-toggle"
+          });
+
+          if (opts.insert === "after") {
+            nav.parentNode.insertBefore(toggle, nav.nextSibling);
+          } else {
+            nav.parentNode.insertBefore(toggle, nav);
+          }
+
+          navToggle = toggle;
+        } else {
+          var toggleEl = opts.customToggle.replace("#", "");
+
+          if (document.getElementById(toggleEl)) {
+            navToggle = document.getElementById(toggleEl);
+          } else if (document.querySelector(toggleEl)) {
+            navToggle = document.querySelector(toggleEl);
+          } else {
+            throw new Error("The custom nav toggle you are trying to select doesn't exist");
+          }
+        }
+      },
+
+      _closeOnNavClick: function () {
+        if (opts.closeOnNavClick && "querySelectorAll" in document) {
+          var links = nav.querySelectorAll("a"),
+            self = this;
+          forEach(links, function (i, el) {
+            addEvent(links[i], "click", function () {
+              if (isMobile) {
+                self.toggle();
+              }
+            }, false);
+          });
+        }
+      },
+
+      _preventDefault: function(e) {
+        if (e.preventDefault) {
+          e.preventDefault();
+          e.stopPropagation();
+        } else {
+          e.returnValue = false;
+        }
+      },
+
+      _onTouchStart: function (e) {
+        e.stopPropagation();
+        if (opts.insert === "after") {
+          addClass(document.body, "disable-pointer-events");
+        }
+        this.startX = e.touches[0].clientX;
+        this.startY = e.touches[0].clientY;
+        this.touchHasMoved = false;
+        removeEvent(navToggle, "mouseup", this, false);
+      },
+
+      _onTouchMove: function (e) {
+        if (Math.abs(e.touches[0].clientX - this.startX) > 10 ||
+        Math.abs(e.touches[0].clientY - this.startY) > 10) {
+          this.touchHasMoved = true;
+        }
+      },
+
+      _onTouchEnd: function (e) {
+        this._preventDefault(e);
+        if (!this.touchHasMoved) {
+          if (e.type === "touchend") {
+            this.toggle();
+            if (opts.insert === "after") {
+              setTimeout(function () {
+                removeClass(document.body, "disable-pointer-events");
+              }, opts.transition + 300);
+            }
+            return;
+          } else {
+            var evt = e || window.event;
+            // If it isn't a right click
+            if (!(evt.which === 3 || evt.button === 2)) {
+              this.toggle();
+            }
+          }
+        }
+      },
+
+      _onKeyUp: function (e) {
+        var evt = e || window.event;
+        if (evt.keyCode === 13) {
+          this.toggle();
+        }
+      },
+
+      _transitions: function () {
+        if (opts.animate) {
+          var objStyle = nav.style,
+            transition = "max-height " + opts.transition + "ms";
+
+          objStyle.WebkitTransition = transition;
+          objStyle.MozTransition = transition;
+          objStyle.OTransition = transition;
+          objStyle.transition = transition;
+        }
+      },
+
+      _calcHeight: function () {
+        var savedHeight = 0;
+        for (var i = 0; i < nav.inner.length; i++) {
+          savedHeight += nav.inner[i].offsetHeight;
+        }
+        var innerStyles = "." + opts.jsClass + " ." + opts.navClass + "-" + this.index + ".opened{max-height:" + savedHeight + "px !important}";
+
+        if (styleElement.styleSheet) {
+          styleElement.styleSheet.cssText = innerStyles;
+        } else {
+          styleElement.innerHTML = innerStyles;
+        }
+
+        innerStyles = "";
+      }
+
+    };
+
+    return new ResponsiveNav(el, options);
+
+  };
+
+  window.responsiveNav = responsiveNav;
+
+}(document, window, 0));
+$(document).ready(function() { try {
+
+	/* Use this js doc for all application specific JS */
+
+	/* TABS --------------------------------- */
+	/* Remove if you don't need :) */
+	
+	var tabs = $('dl.tabs');
+		tabsContent = $('ul.tabs-content')
+	
+	tabs.each(function(i) {
+		//Get all tabs
+		var tab = $(this).children('dd').children('a');
+		tab.click(function(e) {
+			
+			//Get Location of tab's content
+			var contentLocation = $(this).attr("href")
+			contentLocation = contentLocation + "Tab";
+			
+			//Let go if not a hashed one
+			if(contentLocation.charAt(0)=="#") {
+			
+				e.preventDefault();
+			
+				//Make Tab Active
+				tab.removeClass('active');
+				$(this).addClass('active');
+				
+				//Show Tab Content
+				$(contentLocation).parent('.tabs-content').children('li').css({"display":"none"});
+				$(contentLocation).css({"display":"block"});
+				
+			} 
+		});
+	});
+	
+	
+	/* PLACEHOLDER FOR FORMS ------------- */
+	/* Remove this and jquery.placeholder.min.js if you don't need :) */
+	
+	/* placeholder not needed */
+	
+} catch(e) {} });
+
+</script>
+
+
+
+
+
+
+
+<!-- Lightbox -->
+<div id="lb"><img id="lb-img" src="" alt=""></div>
+
+<script>
+(function(){
+var catMap = [
+  { re:/passion chocolate/i, cats:['Corporate Identity','Obalový design'] },
+  { re:/bread gap/i,         cats:['Corporate Identity','Obalový design'] },
+  { re:/cinzano/i,           cats:['Obalový design'] },
+  { re:/adidas/i,            cats:['Obalový design'] },
+  { re:/kamufláž/i,          cats:['Produktový design'] },
+  { re:/spiderman/i,         cats:['Design nábytku'] },
+  { re:/barbie/i,            cats:['Design nábytku'] },
+  { re:/batman/i,            cats:['Produktový design'] },
+  { re:/teenage/i,           cats:['Produktový design'] },
+  { re:/véčko/i,             cats:['Produktový design'] },
+  { re:/xbtc/i,              cats:['Corporate Identity','Webdesign'] },
+  { re:/pozice/i,             cats:['Webdesign'] },
+];
+var detailMap = {
+  'passion chocolate': {
+    vyzva:'Prémiový obal a identita pro ručně vyráběnou čokoládu.',
+    reseni:'Kompletní značka a obalový systém se dohledem nad tiskem. Obal umožňuje viditelnost produktu, otevírání je součástí zážitku.',
+    vysledek:'Prémiový packaging propojující estetiku s praktickým použitím.'
+  },
+  'bread gap ci': {
+    vyzva:'Dostupný obal pro čerstvé sendviče a identita značky připravené na franšízu.',
+    reseni:'Identita i konstrukce obalu s výsekovou raznicí. Krabička se po otevření stane podložkou, lze ji znovu uzavřít. Skládání bez lepení.',
+    vysledek:'Funkční prototyp připravený pro výrobu a rozvoj značky.'
+  },
+  'bread gap web': {
+    vyzva:'První web značky Bread Gap s důrazem na atmosféru a rychlé spuštění.',
+    reseni:'Responzivní web s vlastním objednávacím systémem. Vizuální styl navazuje na papírové a kartonové materiály obalů.',
+    vysledek:'Web s objednávkovým systémem, který definoval digitální identitu značky.'
+  },
+  'ceska pozice': {
+    vyzva:'Responzivní čtecí aplikace pro zpravodajský web s podporou offline režimu.',
+    reseni:'Typografie, řádkování a bílý prostor jako klíčová UX rozhodnutí. Aplikace šla stáhnout do zařízení, uživatel si mohl přizpůsobit velikost písma.',
+    vysledek:'Pozitivní ohlas za čitelnost v době, kdy responzivní design nebyl samozřejmostí.'
+  },
+  'xbtc': {
+    vyzva:'Vizuální identita a webový koncept pro kryptoměnovou platformu.',
+    reseni:'Návrh loga a vizuálního jazyka webu jako základ pro budoucí rozvoj.',
+    vysledek:'Koncept převzatý interním týmem jako vizuální směřování platformy.'
+  },
+  'cinzano': {
+    vyzva:'Luxusní dárkový set pro míchání drinků pod značkou Cinzano.',
+    reseni:'Série konceptů prémiového obalu navržená tak, aby samotné rozbalení bylo součástí zážitku. Materiály a zpracování odpovídají pozici značky v gifting segmentu.',
+    vysledek:'Konceptuální návrhy prémiového dárkového setu připravené k výrobní realizaci.'
+  },
+  'adidas chaos': {
+    vyzva:'Limitovaná edice advocacy kitu navazující na fragmentový vizuál kampaně Adidas ve spolupráci s Intersportem.',
+    reseni:'Obal přebírá grafický jazyk tehdejší kampaně a přenáší ho do fyzické formy. Koncept propojuje produkt s komunikační platformou značky.',
+    vysledek:'Vizuálně konzistentní advocacy kit posilující kampaňovou identitu na prodejním místě.'
+  },
+  'adidas boost': {
+    vyzva:'Speciální limitovaná edice obalového setu pro řadu Adidas Boost včetně trika.',
+    reseni:'Obal obsahoval tričko jako součást produktového zážitku. Vizuální zpracování vychází z tehdejší globální Boost kampaně a vytváří s ní přímou vazbu.',
+    vysledek:'Konceptuální obalový set propojující produkt, kampaň a zákaznický zážitek.'
+  },
+  'spiderman': {
+    vyzva:'Dětská řada nábytku a vybavení pod licencí Spiderman.',
+    reseni:'Kolekce zahrnuje multifunkční stůl na roli papíru se zápustnými přihrádkami a dvěma výškami, lampičku ve tvaru mrakodrapu, velkou skříň a taburet. Každý kus respektuje licenční vizuál a zároveň plní praktické funkce.',
+    vysledek:'Ucelená dětská kolekce kombinující licenční design s funkčním nábytkem.'
+  },
+  'vecko': {
+    vyzva:'Vlastní koncept mobilního telefonu s důrazem na ergonomii a nové ovládací paradigma.',
+    reseni:'Prohnutý tvar záměrně kopíruje tvar těla v kapse. Boční modrá tlačítka otevírají telefon místo tradičního mechanismu. Skica vznikla přibližně 10 let před prvním iPhonem, vizualizace používá jeho UI pro ilustraci konceptu.',
+    vysledek:'Osobní produktový koncept předjímající směřování mobilního designu k ergonomii.'
+  },
+  'teenage kolekce': {
+    vyzva:'Navrhnout kolekci doplňků pro teenagery navazující na batohovou řadu.',
+    reseni:'Vizuálně konzistentní série produktů sdílející designový jazyk s batohovou kolekcí.',
+    vysledek:'Konceptuální série dovedená do fáze prototypů.'
+  },
+  'teenage batohy': {
+    vyzva:'Navrhnout kolekci batohů pro teenagery kombinující aktuální vizuální jazyk s praktickými požadavky na školní nošení.',
+    reseni:'Série batohů vycházející z trendů cílové skupiny. Design pracuje s materiály, barvami a detaily odpovídajícími věkové kategorii.',
+    vysledek:'Kolekce navržená pro produkci s jasným zaměřením na teenagerského zákazníka.'
+  },
+  'batman': {
+    vyzva:'Navrhnout dětský batoh pod licencí Batman spojující funkční školní batoh s hravým prvkem.',
+    reseni:'Batoh doplněn odnímatelnou pláštěnkou ve tvaru Batmanova pláště. Licenční vizuál integrován do konstrukce produktu, nikoli jen jako potisk.',
+    vysledek:'Produkt propojující licenci s funkčním designem a přidanou hodnotou pro dítě.'
+  },
+  'barbie': {
+    vyzva:'Dětský nábytkový set pod licencí Barbie s důrazem na multifunkčnost.',
+    reseni:'Kolekce zahrnuje multifunkční postel se stolečkem a multifunkční stůl se zabudovaným osvětleným šperkovníkem, jídelním stolem, skříní a paravanem. Design propojuje licenční estetiku s praktickým využitím malého prostoru.',
+    vysledek:'Kompaktní dívčí kolekce nabízející maximum funkcí v jednom designovém celku.'
+  }
+};
+var EYE='<svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>';
+
+function getCats(t, sec){
+  if(/bread gap/i.test(t)){
+    if(sec==='web') return ['Webdesign'];
+    if(sec==='ci')  return ['Corporate Identity','Obalový design'];
+    return ['Obalový design'];
+  }
+  for(var i=0;i<catMap.length;i++) if(catMap[i].re.test(t)) return catMap[i].cats;
+  return [];
+}
+
+function buildCard(row, sec){
+  var card=document.createElement('div'); card.className='mcard';
+  var nahled=row.querySelector('.nahled');
+  var img=row.querySelector('img');
+  var h4El=row.querySelector('h4');
+  var h5El=row.querySelector('h5');
+  var title=h4El?h4El.textContent.trim():'';
+  var tl=title.toLowerCase();
+
+  // Pills inside nahled
+  var cats=getCats(tl, sec);
+  card.dataset.cats=cats.join('|');
+  if(cats.length&&nahled){
+    var pw=document.createElement('div'); pw.className='pills-wrap';
+    cats.forEach(function(c){ var p=document.createElement('span'); p.className='cat-pill'; p.textContent=c; pw.appendChild(p); });
+    nahled.appendChild(pw);
+  }
+  // Hover overlay
+  if(nahled){
+    var ov=document.createElement('div'); ov.className='hover-overlay'; ov.innerHTML=EYE;
+    nahled.appendChild(ov);
+    if(img){ nahled.addEventListener('click',function(e){ e.preventDefault(); document.getElementById('lb-img').src=img.src; document.getElementById('lb').classList.add('open'); }); }
+    card.appendChild(nahled);
+  }
+  // Title
+  if(h4El){ var nh4=document.createElement('h4'); nh4.textContent=title; card.appendChild(nh4); }
+  // Subtitle – skip for detail cards
+  var h5txt=h5El?h5El.textContent.trim().toLowerCase():'';
+  var detailKey=null;
+  if(/passion chocolate/i.test(tl))               detailKey='passion chocolate';
+  else if(/bread gap/i.test(tl)&&sec==='ci')      detailKey='bread gap ci';
+  else if(/bread gap/i.test(tl)&&sec==='web')     detailKey='bread gap web';
+  else if(tl.indexOf('pozice')>-1)                detailKey='ceska pozice';
+  else if(/xbtc/i.test(tl))                       detailKey='xbtc';
+  else if(/cinzano/i.test(tl)&&/shake/i.test(h5txt)) detailKey='cinzano';
+  else if(/chaos/i.test(h5txt))                   detailKey='adidas chaos';
+  else if(/boost/i.test(h5txt)||/ultra/i.test(h5txt)) detailKey='adidas boost';
+  else if(/spiderman/i.test(tl))                  detailKey='spiderman';
+  else if(tl.indexOf('véčko')>-1||tl.indexOf('vecko')>-1) detailKey='vecko';
+  else if(/teenage kolekce/i.test(tl))            detailKey='teenage kolekce';
+  else if(/teenage batohy/i.test(tl))             detailKey='teenage batohy';
+  else if(/batman/i.test(tl))                     detailKey='batman';
+  else if(/barbie/i.test(tl))                     detailKey='barbie';
+  var isDetail=!!detailKey;
+  if(h5El&&!isDetail){ var nh5=document.createElement('h5'); nh5.textContent=h5El.textContent.trim(); card.appendChild(nh5); }
+  // Detail text
+  if(isDetail){
+    var dk=detailKey;
+    var dt=detailMap[dk];
+    if(dt){ var dd=document.createElement('div'); dd.className='card-detail';
+      dd.innerHTML='<div class="card-detail-block"><div class="card-detail-label">Výzva</div><div class="card-detail-text">'+dt.vyzva+'</div></div>'+
+        '<div class="card-detail-block"><div class="card-detail-label">Řešení</div><div class="card-detail-text">'+dt.reseni+'</div></div>'+
+        '<div class="card-detail-block"><div class="card-detail-label">Výsledek</div><div class="card-detail-text">'+dt.vysledek+'</div></div>';
+      card.appendChild(dd); }
+  }
+  return card;
+}
+
+window.addEventListener('load', function(){
+
+  // ── 1. Build cards ──────────────────────────────────────────────────
+  var priority=[], rest=[];
+  ['design','ci','web'].forEach(function(sec){
+    var wrapper=document.getElementById(sec); if(!wrapper) return;
+    wrapper.querySelectorAll('.row').forEach(function(row){
+      if(!row.querySelector('.nahled')) return;
+      var h4=row.querySelector('h4'); var t=h4?h4.textContent.trim().toLowerCase():'';
+      var card=buildCard(row,sec);
+      if(/passion chocolate/i.test(t)||(/bread gap/i.test(t)&&sec==='ci')) priority.push({card:card,t:t});
+      else rest.push(card);
+    });
+  });
+
+  var ordered=[];
+  var bg=priority.find(function(o){ return /bread gap/i.test(o.t); });
+  var pc=priority.find(function(o){ return /passion chocolate/i.test(o.t); });
+  if(bg) ordered.push(bg.card);
+  if(pc) ordered.push(pc.card);
+  ordered=ordered.concat(rest);
+
+  // ── 2. Build flat masonry container ─────────────────────────────────
+  var flat=document.createElement('div'); flat.id='masonry-flat';
+  var sizer=document.createElement('div'); sizer.className='grid-sizer';
+  flat.appendChild(sizer);
+  ordered.forEach(function(c){ flat.appendChild(c); });
+  var oldRow=document.querySelector('.container > .row');
+  if(oldRow&&oldRow.parentNode) oldRow.parentNode.insertBefore(flat,oldRow.nextSibling);
+  else document.body.appendChild(flat);
+
+  // ── 3. Collect categories ────────────────────────────────────────────
+  var allCatSet={};
+  flat.querySelectorAll('.mcard').forEach(function(c){
+    (c.dataset.cats||'').split('|').forEach(function(cat){ if(cat) allCatSet[cat]=1; });
+  });
+  var chipOrder=['Corporate Identity','Obalový design','Produktový design','Design nábytku','Webdesign'];
+  var allCats=chipOrder.filter(function(c){ return allCatSet[c]; });
+
+  // ── 4. activeSet: all ON by default ─────────────────────────────────
+  var activeSet={};
+  allCats.forEach(function(c){ activeSet[c]=true; });
+
+  // ── 5. Apply URL param BEFORE building chips and Masonry ─────────────
+  var urlCat=(new URLSearchParams(window.location.search)).get('cat');
+  var urlMatched=null;
+  if(urlCat){
+    var norm=urlCat.toLowerCase().replace(/-/g,' ')
+      .replace('obalovy design','obalový design')
+      .replace('produktovy design','produktový design')
+      .replace('design nabytku','design nábytku')
+      .replace(/^ci$/,'corporate identity');
+    urlMatched=allCats.find(function(c){ return c.toLowerCase()===norm; })||null;
+    if(urlMatched){
+      allCats.forEach(function(c){ activeSet[c]=(c===urlMatched); });
+    }
+  }
+
+  // ── 6. Visibility helper ─────────────────────────────────────────────
+  function applyVisibility(){
+    var allOn=allCats.every(function(c){ return activeSet[c]; });
+    flat.querySelectorAll('.mcard').forEach(function(card){
+      if(allOn){ card.classList.remove('mhidden'); return; }
+      var cardCats=(card.dataset.cats||'').split('|');
+      card.classList.toggle('mhidden', !cardCats.some(function(c){ return activeSet[c]; }));
+    });
+  }
+
+  // ── 7. Masonry ───────────────────────────────────────────────────────
+  var msnry=null;
+  function initMsnry(){
+    applyVisibility();
+    if(msnry) msnry.destroy();
+    msnry=new Masonry(flat,{
+      itemSelector:'.mcard:not(.mhidden)',
+      columnWidth:'.grid-sizer',
+      gutter:12,
+      percentPosition:true,
+      transitionDuration:0
+    });
+  }
+
+  function applyFilter(){
+    applyVisibility();
+    if(msnry){ msnry.reloadItems(); msnry.layout(); }
+  }
+
+  // Init after images load (base64 = immediate)
+  var imgs=flat.querySelectorAll('img');
+  var loaded=0, total=Math.max(imgs.length,1);
+  function tryInit(){ if(++loaded>=total) initMsnry(); }
+  if(!imgs.length) initMsnry();
+  else imgs.forEach(function(img){
+    if(img.complete) tryInit();
+    else{ img.addEventListener('load',tryInit); img.addEventListener('error',tryInit); }
+  });
+
+  window.addEventListener('resize',function(){
+    clearTimeout(window._msTimer);
+    window._msTimer=setTimeout(function(){ if(msnry) msnry.layout(); },150);
+  });
+
+  // ── 8. Build filter bar ──────────────────────────────────────────────
+  var bar=document.createElement('div'); bar.id='filter-bar';
+  var hint=document.createElement('div'); hint.id='filter-hint';
+  hint.textContent='dvojklik = zobrazit pouze tuto kategorii';
+  var oldBar=document.getElementById('filter-bar');
+  if(oldBar) oldBar.remove();
+  flat.parentNode.insertBefore(bar,flat);
+  flat.parentNode.insertBefore(hint,flat);
+
+  allCats.forEach(function(cat){
+    var chip=document.createElement('span');
+    chip.className='fchip'+(activeSet[cat]?' active':' inactive');
+    var checkWrap=document.createElement('span');
+    checkWrap.className='chip-check';
+    checkWrap.innerHTML='<svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>';
+    chip.appendChild(checkWrap);
+    var label=document.createElement('span');
+    label.textContent=cat;
+    chip.appendChild(label);
+
+    function refreshChips(){
+      bar.querySelectorAll('.fchip').forEach(function(ch){
+        var chCat=ch.querySelector('span:last-child').textContent;
+        ch.classList.toggle('active', !!activeSet[chCat]);
+        ch.classList.toggle('inactive', !activeSet[chCat]);
+      });
+    }
+
+    chip.addEventListener('click',function(){
+      activeSet[cat]=!activeSet[cat];
+      refreshChips();
+      applyFilter();
+    });
+
+    chip.addEventListener('dblclick',function(e){
+      e.preventDefault();
+      var soloActive=allCats.every(function(c){ return c===cat?activeSet[c]:!activeSet[c]; });
+      if(soloActive){ allCats.forEach(function(c){ activeSet[c]=true; }); }
+      else           { allCats.forEach(function(c){ activeSet[c]=(c===cat); }); }
+      refreshChips();
+      applyFilter();
+    });
+
+    bar.appendChild(chip);
+  });
+
+  // ── 9. Lightbox ──────────────────────────────────────────────────────
+  document.getElementById('lb').addEventListener('click',function(){ this.classList.remove('open'); });
+  document.addEventListener('keydown',function(e){ if(e.key==='Escape') document.getElementById('lb').classList.remove('open'); });
+
+}); // end window.load
+})();
+</script>
+
 </body>
-
 </html>
-
-
-
-
-
-
