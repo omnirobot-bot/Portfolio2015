@@ -160,7 +160,7 @@
 		
 		@media (max-width: 30em) {
 			body, p {  font-size: 15px; font-size: 1.5rem; line-height: 1.4; }
-			#ci h3, #web h3, #online h3  {padding-top: 6em;}
+			#ci h3, #web h3, #online h3, #architektura h3  {padding-top: 6em;}
 		}
 		
 	
@@ -444,7 +444,7 @@
 	border-radius: 6px;
 	}
 
-.design .row, .ci .row, .web .row, .online .row {
+.design .row, .ci .row, .web .row, .online .row, .architektura .row {
 	background-color: rgba(255,255,255,0.09);
 	padding-bottom: 0.9em; 
 /*	  -webkit-box-shadow: 0px 3px 2px -2px #a3a3a3; */
@@ -1217,7 +1217,7 @@ h5.centered { text-align: center; }
 <style id="masonry-override">
 /* Hide category headings + mobile buttons */
 .boxtrans h3, .hide-on-desktops { display: none !important; }
-#design, #ci, #web { display: none !important; }
+#design, #ci, #web, #architektura { display: none !important; }
 
 /* ── Flat container ── */
 #masonry-flat {
@@ -1304,6 +1304,55 @@ h5.centered { text-align: center; }
 }
 .card-detail-text { font-size: 12px; line-height: 1.7; color: rgba(255,255,255,0.8); }
 
+/* ── Collapsible detail ── */
+/* Detail cards: h4 becomes flex row (title + chevron), no border (moved into collapsible) */
+.mcard.has-detail h4 {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: none;
+  padding-bottom: 6px;
+  cursor: pointer;
+  user-select: none;
+}
+.chevron-toggle {
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  margin-left: 6px;
+  opacity: 0.45;
+  transition: opacity 0.2s;
+}
+.mcard:hover .chevron-toggle,
+.mcard.expanded .chevron-toggle { opacity: 1; }
+.chevron-toggle svg {
+  transition: transform 0.38s cubic-bezier(0.4, 0, 0.2, 1);
+}
+.mcard:hover .chevron-toggle svg,
+.mcard.expanded .chevron-toggle svg {
+  transform: rotate(180deg);
+}
+/* Collapsible wrapper — grid trick: no max-height timing issues */
+.card-detail-wrap {
+  display: grid;
+  grid-template-rows: 0fr;
+  transition: grid-template-rows 0.38s cubic-bezier(0.4, 0, 0.2, 1);
+}
+.mcard:hover .card-detail-wrap,
+.mcard.expanded .card-detail-wrap {
+  grid-template-rows: 1fr;
+}
+.card-detail-inner {
+  overflow: hidden;
+  min-height: 0;
+}
+/* Divider inside collapsible (only visible when expanded) */
+.card-divider {
+  height: 1px;
+  background: rgba(255,255,255,0.15);
+  margin: 4px 12px 10px;
+}
+
 /* ── Hidden cards (Masonry ignores display:none via querySelectorAll) ── */
 .mcard.mhidden { display: none !important; }
 
@@ -1358,6 +1407,7 @@ window.onerror = function(msg, src, line, col, err) { return true; };
 						<li class="hide-on-desktops"><a href="#design">DESIGN</a></li>
 						<li class="hide-on-desktops"><a href="#ci">CORPORATE IDENTITY</a></li>
 						<li class="hide-on-desktops"><a href="#web">WEBDESIGN</a></li>
+						<li class="hide-on-desktops"><a href="#architektura">ARCHITEKTURA</a></li>
 						<!--<li class="hide-on-desktops"><a href="#online">NEWSLETTERY A BANNERY</a></li>
 						<li><a href="cv.pdf">CV</a></li>-->
 						<li><a href="https://omnirobot-bot.github.io/Portfolio2015/cv_en.pdf">CV (en)</a></li>
@@ -1825,17 +1875,22 @@ window.onerror = function(msg, src, line, col, err) { return true; };
 					</div>
 					-->
 				</div>
+			<div class="four columns" id="architektura">
+				<div class="boxtrans architektura">
+					<a class="hide-on-desktops" href="#"><img src="images/top_2x.gif" class="button-top"></a>
+					<h3>Architektura</h3>
+
+					<div class="row">
+						<div class="nahled">
+							<a href="#">
+								<img src="images/domek.png">
+							</a>
+						</div>
+						<h4>Domek</h4>
+					</div>
+
+				</div>
 			</div>
-			
-		
-			
-
-
-					
-		
-		
-		
-			
 		</div>
 
 	
@@ -2445,6 +2500,7 @@ var catMap = [
   { re:/batman/i,            cats:['Produktový design'] },
   { re:/teenage/i,           cats:['Produktový design'] },
   { re:/véčko/i,             cats:['Produktový design'] },
+  { re:/domek/i,             cats:['Architektura'] },
   { re:/xbtc/i,              cats:['Corporate Identity','Webdesign'] },
   { re:/pozice/i,             cats:['Webdesign'] },
 ];
@@ -2518,6 +2574,11 @@ var detailMap = {
     vyzva:'Dětský nábytkový set pod licencí Barbie s důrazem na multifunkčnost.',
     reseni:'Kolekce zahrnuje multifunkční postel se stolečkem a multifunkční stůl se zabudovaným osvětleným šperkovníkem, jídelním stolem, skříní a paravanem. Design propojuje licenční estetiku s praktickým využitím malého prostoru.',
     vysledek:'Kompaktní dívčí kolekce nabízející maximum funkcí v jednom designovém celku.'
+  },
+  'domek': {
+    vyzva:'Navrhnout rodinný dům na svažitém pozemku s minimální zastavěnou plochou, přičemž každý kubický centimetr prostoru musí sloužit svému účelu.',
+    reseni:'Dispozice reaguje na sklon terénu — obývací pokoj s knihovnou i ložnice jsou orientovány do údolí s výhledem přes velká okna. Vestavěný nábytek využívá každý dostupný prostor pro úložné řešení. Kuchyňská linka je prosvětlena širokým oknem, velká okna v obývacím pokoji zajišťují světlost i při minimálním půdorysu.',
+    vysledek:'Kompaktní dům kde výhled do údolí a přirozené světlo vytváří pocit prostoru a klidu.'
   }
 };
 var EYE='<svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>';
@@ -2556,8 +2617,9 @@ function buildCard(row, sec){
     if(img){ nahled.addEventListener('click',function(e){ e.preventDefault(); document.getElementById('lb-img').src=img.src; document.getElementById('lb').classList.add('open'); }); }
     card.appendChild(nahled);
   }
-  // Title
-  if(h4El){ var nh4=document.createElement('h4'); nh4.textContent=title; card.appendChild(nh4); }
+  // Title — build but don't append yet (chevron needs isDetail first)
+  var nh4=null;
+  if(h4El){ nh4=document.createElement('h4'); nh4.textContent=title; }
   // Subtitle – skip for detail cards
   var h5txt=h5El?h5El.textContent.trim().toLowerCase():'';
   var detailKey=null;
@@ -2575,18 +2637,42 @@ function buildCard(row, sec){
   else if(/teenage batohy/i.test(tl))             detailKey='teenage batohy';
   else if(/batman/i.test(tl))                     detailKey='batman';
   else if(/barbie/i.test(tl))                     detailKey='barbie';
+  else if(/domek/i.test(tl))                      detailKey='domek';
   var isDetail=!!detailKey;
+  // Add double-chevron toggle to title for detail cards, then append h4
+  if(nh4){
+    if(isDetail){
+      card.classList.add('has-detail');
+      var chevSpan=document.createElement('span'); chevSpan.className='chevron-toggle';
+      chevSpan.innerHTML='<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 4 12 10 18 4"/><polyline points="6 13 12 19 18 13"/></svg>';
+      nh4.appendChild(chevSpan);
+    }
+    card.appendChild(nh4);
+  }
   if(h5El&&!isDetail){ var nh5=document.createElement('h5'); nh5.textContent=h5El.textContent.trim(); card.appendChild(nh5); }
-  // Detail text
+  // Detail text — wrapped in collapsible container
   if(isDetail){
     var dk=detailKey;
     var dt=detailMap[dk];
-    if(dt){ var dd=document.createElement('div'); dd.className='card-detail';
+    if(dt){
+      var dd=document.createElement('div'); dd.className='card-detail';
       dd.innerHTML='<div class="card-detail-block"><div class="card-detail-label">Výzva</div><div class="card-detail-text">'+dt.vyzva+'</div></div>'+
         '<div class="card-detail-block"><div class="card-detail-label">Řešení</div><div class="card-detail-text">'+dt.reseni+'</div></div>'+
         '<div class="card-detail-block"><div class="card-detail-label">Výsledek</div><div class="card-detail-text">'+dt.vysledek+'</div></div>';
-      card.appendChild(dd); }
+      var divider=document.createElement('div'); divider.className='card-divider';
+      var inner=document.createElement('div'); inner.className='card-detail-inner';
+      inner.appendChild(divider); inner.appendChild(dd);
+      var wrap=document.createElement('div'); wrap.className='card-detail-wrap';
+      wrap.appendChild(inner);
+      card.appendChild(wrap);
+    }
   }
+  // Click anywhere on card (except lightbox image) toggles sticky expanded state
+  card.addEventListener('click',function(e){
+    if(e.target.closest('.nahled')) return;
+    if(!this.classList.contains('has-detail')) return;
+    this.classList.toggle('expanded');
+  });
   return card;
 }
 
@@ -2594,7 +2680,7 @@ window.addEventListener('load', function(){
 
   // ── 1. Build cards ──────────────────────────────────────────────────
   var priority=[], rest=[];
-  ['design','ci','web'].forEach(function(sec){
+  ['design','ci','web','architektura'].forEach(function(sec){
     var wrapper=document.getElementById(sec); if(!wrapper) return;
     wrapper.querySelectorAll('.row').forEach(function(row){
       if(!row.querySelector('.nahled')) return;
@@ -2626,7 +2712,7 @@ window.addEventListener('load', function(){
   flat.querySelectorAll('.mcard').forEach(function(c){
     (c.dataset.cats||'').split('|').forEach(function(cat){ if(cat) allCatSet[cat]=1; });
   });
-  var chipOrder=['Corporate Identity','Obalový design','Produktový design','Design nábytku','Webdesign'];
+  var chipOrder=['Corporate Identity','Obalový design','Produktový design','Design nábytku','Webdesign','Architektura'];
   var allCats=chipOrder.filter(function(c){ return allCatSet[c]; });
 
   // ── 4. activeSet: all ON by default ─────────────────────────────────
@@ -2676,6 +2762,22 @@ window.addEventListener('load', function(){
     applyVisibility();
     if(msnry){ msnry.reloadItems(); msnry.layout(); }
   }
+
+  // ── 7b. Smooth Masonry relayout during card expand/collapse ──────────
+  // Runs layout() every frame for the duration of the CSS transition
+  var _layoutRaf=null;
+  function startLayoutLoop(){
+    if(_layoutRaf) return;
+    var end=Date.now()+480; // slightly longer than 0.38s transition
+    function loop(){
+      if(msnry) msnry.layout();
+      _layoutRaf=Date.now()<end ? requestAnimationFrame(loop) : null;
+    }
+    _layoutRaf=requestAnimationFrame(loop);
+  }
+  flat.addEventListener('transitionrun',function(e){
+    if(e.target.classList&&e.target.classList.contains('card-detail-wrap')) startLayoutLoop();
+  },false);
 
   // Init after images load (base64 = immediate)
   var imgs=flat.querySelectorAll('img');
