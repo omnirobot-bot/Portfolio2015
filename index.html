@@ -2002,6 +2002,9 @@ $(document).ready(function() { try {
 
 <script>
 (function(){
+var EYE='<svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>';
+var _doLayout=function(){};
+
 // ── Card data ────────────────────────────────────────────────────────
 var CARDS=[
   // CI
@@ -2333,6 +2336,7 @@ window.addEventListener('load', function(){
     }
     _layoutRaf=requestAnimationFrame(loop);
   }
+  _doLayout=startLayoutLoop;
   flat.addEventListener('transitionrun',function(e){
     if(e.target.classList&&e.target.classList.contains('card-detail-wrap')) startLayoutLoop();
   },false);
