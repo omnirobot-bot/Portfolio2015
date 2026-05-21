@@ -2002,34 +2002,19 @@ $(document).ready(function() { try {
 
 <script>
 (function(){
-var catMap = [
-  { re:/passion chocolate/i, cats:['Corporate Identity','Obalový design'] },
-  { re:/bread gap/i,         cats:['Corporate Identity','Obalový design'] },
-  { re:/cinzano/i,           cats:['Obalový design'] },
-  { re:/adidas/i,            cats:['Obalový design'] },
-  { re:/kamufláž/i,          cats:['Produktový design'] },
-  { re:/spiderman/i,         cats:['Design nábytku'] },
-  { re:/barbie/i,            cats:['Design nábytku'] },
-  { re:/batman/i,            cats:['Produktový design'] },
-  { re:/teenage/i,           cats:['Produktový design'] },
-  { re:/véčko/i,             cats:['Produktový design'] },
-  { re:/knihovna/i,           cats:['Design nábytku'] },
-  { re:/kuchyň|kuchyn/i,     cats:['Design nábytku'] },
-  { re:/ložnice|loznice/i,   cats:['Design nábytku'] },
-  { re:/domek/i,             cats:['Architektura'] },
-  { re:/xbtc/i,              cats:['Corporate Identity','Webdesign'] },
-  { re:/pozice/i,             cats:['Webdesign'] },
-];// ── Card data ────────────────────────────────────────────────────────
+// ── Card data ────────────────────────────────────────────────────────
 var CARDS=[
   // CI
-  { sec:'ci', img:'images/breadgap.jpg',
+  { cats:['Corporate Identity','Obalový design'],
+    img:'images/breadgap.jpg',
     title:'Bread Gap', subtitle:'Logo a vizuální styl, letáky, návrhy obalu',
     detail:{
       vyzva:'Dostupný obal pro čerstvé sendviče a identita značky připravené na franšízu.',
       reseni:'Identita i konstrukce obalu s výsekovou raznicí. Krabička se po otevření stane podložkou, lze ji znovu uzavřít. Skládání bez lepení.',
       vysledek:'Funkční prototyp připravený pro výrobu a rozvoj značky.'
     }},
-  { sec:'ci', img:'images/passion_chocolate_set_s03_a4.jpg',
+  { cats:['Corporate Identity','Obalový design'],
+    img:'images/passion_chocolate_set_s03_a4.jpg',
     title:'Passion Chocolate', subtitle:'Logo a vizuální styl, design obalů, letáky, brožury',
     detail:{
       vyzva:'Prémiový obal a identita pro ručně vyráběnou čokoládu.',
@@ -2038,21 +2023,24 @@ var CARDS=[
     }},
 
   // Web
-  { sec:'web', img:'images/responsive_xbtc_02.jpg',
+  { cats:['Corporate Identity','Webdesign'],
+    img:'images/responsive_xbtc_02.jpg',
     title:'XBTC.cz', subtitle:'Design/HTML5/CSS3',
     detail:{
       vyzva:'Vizuální identita a webový koncept pro kryptoměnovou platformu.',
       reseni:'Návrh loga a vizuálního jazyka webu jako základ pro budoucí rozvoj.',
       vysledek:'Koncept převzatý interním týmem jako vizuální směřování platformy.'
     }},
-  { sec:'web', img:'images/responsive_bread_gap_02.jpg',
+  { cats:['Webdesign'],
+    img:'images/responsive_bread_gap_02.jpg',
     title:'Bread Gap', subtitle:'Design/HTML5/CSS3',
     detail:{
       vyzva:'První web značky Bread Gap s důrazem na atmosféru a rychlé spuštění.',
       reseni:'Responzivní web s vlastním objednávacím systémem. Vizuální styl navazuje na papírové a kartonové materiály obalů.',
       vysledek:'Web s objednávkovým systémem, který definoval digitální identitu značky.'
     }},
-  { sec:'web', img:'images/responsive_CP.jpg',
+  { cats:['Webdesign'],
+    img:'images/responsive_CP.jpg',
     title:'Česká pozice aplikace', subtitle:'HTML5/CSS3',
     detail:{
       vyzva:'Responzivní čtecí aplikace pro zpravodajský web s podporou offline režimu.',
@@ -2061,25 +2049,26 @@ var CARDS=[
     }},
 
   // Design — obalový
-  { sec:'design', img:'images/cinzano_bartender_kit_Custom_leater_bag__s01_c01.jpg',
+  { cats:['Obalový design'],
+    img:'images/cinzano_bartender_kit_Custom_leater_bag__s01_c01.jpg',
     title:'Cinzano I', subtitle:'Shake kit koncept',
     detail:{
       vyzva:'Luxusní dárkový set pro míchání drinků pod značkou Cinzano.',
       reseni:'Série konceptů prémiového obalu navržená tak, aby samotné rozbalení bylo součástí zážitku. Materiály a zpracování odpovídají pozici značky v gifting segmentu.',
       vysledek:'Konceptuální návrhy prémiového dárkového setu připravené k výrobní realizaci.'
     }},
-  { sec:'design', img:'images/cinzano_bartender_kit_Fabric_material_bag__s01_c01_a.jpg',
-    title:'Cinzano II' },
-  { sec:'design', img:'images/cinzano_bartender_kit_Suitcase__s01_c01_a.jpg',
-    title:'Cinzano III' },
-  { sec:'design', img:'images/adidas_chaos_ITS_staff_advocacy_kit.jpg',
+  { cats:['Obalový design'], img:'images/cinzano_bartender_kit_Fabric_material_bag__s01_c01_a.jpg', title:'Cinzano II' },
+  { cats:['Obalový design'], img:'images/cinzano_bartender_kit_Suitcase__s01_c01_a.jpg',            title:'Cinzano III' },
+  { cats:['Obalový design'],
+    img:'images/adidas_chaos_ITS_staff_advocacy_kit.jpg',
     title:'Adidas', subtitle:'Advocacy kit - CHAOS',
     detail:{
       vyzva:'Limitovaná edice advocacy kitu navazující na fragmentový vizuál kampaně Adidas ve spolupráci s Intersportem.',
       reseni:'Obal přebírá grafický jazyk tehdejší kampaně a přenáší ho do fyzické formy. Koncept propojuje produkt s komunikační platformou značky.',
       vysledek:'Vizuálně konzistentní advocacy kit posilující kampaňovou identitu na prodejním místě.'
     }},
-  { sec:'design', img:'images/adidas_extra_boost_staff_advocacy_kit.jpg',
+  { cats:['Obalový design'],
+    img:'images/adidas_extra_boost_staff_advocacy_kit.jpg',
     title:'Adidas', subtitle:'Advocacy kit - ULTRA BOOST',
     detail:{
       vyzva:'Speciální limitovaná edice obalového setu pro řadu Adidas Boost včetně trika.',
@@ -2088,42 +2077,48 @@ var CARDS=[
     }},
 
   // Design — nábytek / produkt
-  { sec:'design', img:'images/Spiderman_furniture.jpg',
+  { cats:['Design nábytku'],
+    img:'images/Spiderman_furniture.jpg',
     title:'Spiderman multifunkční dětský nábytek',
     detail:{
       vyzva:'Dětská řada nábytku a vybavení pod licencí Spiderman.',
       reseni:'Kolekce zahrnuje multifunkční stůl na roli papíru se zápustnými přihrádkami a dvěma výškami, lampičku ve tvaru mrakodrapu, velkou skříň a taburet. Každý kus respektuje licenční vizuál a zároveň plní praktické funkce.',
       vysledek:'Ucelená dětská kolekce kombinující licenční design s funkčním nábytkem.'
     }},
-  { sec:'design', img:'images/barbie_colourV3a4.jpg',
+  { cats:['Design nábytku'],
+    img:'images/barbie_colourV3a4.jpg',
     title:'Barbie kolekce dětského nábytku',
     detail:{
       vyzva:'Dětský nábytkový set pod licencí Barbie s důrazem na multifunkčnost.',
       reseni:'Kolekce zahrnuje multifunkční postel se stolečkem a multifunkční stůl se zabudovaným osvětleným šperkovníkem, jídelním stolem, skříní a paravanem. Design propojuje licenční estetiku s praktickým využitím malého prostoru.',
       vysledek:'Kompaktní dívčí kolekce nabízející maximum funkcí v jednom designovém celku.'
     }},
-  { sec:'design', img:'images/sketch_batman_draft_C_perspective.jpg',
+  { cats:['Produktový design'],
+    img:'images/sketch_batman_draft_C_perspective.jpg',
     title:'Batman dětský batoh s pláštěnkou',
     detail:{
       vyzva:'Navrhnout dětský batoh pod licencí Batman spojující funkční školní batoh s hravým prvkem.',
       reseni:'Batoh doplněn odnímatelnou pláštěnkou ve tvaru Batmanova pláště. Licenční vizuál integrován do konstrukce produktu, nikoli jen jako potisk.',
       vysledek:'Produkt propojující licenci s funkčním designem a přidanou hodnotou pro dítě.'
     }},
-  { sec:'design', img:'images/teen_bags.jpg',
+  { cats:['Produktový design'],
+    img:'images/teen_bags.jpg',
     title:'Teenage batohy',
     detail:{
       vyzva:'Navrhnout kolekci batohů pro teenagery kombinující aktuální vizuální jazyk s praktickými požadavky na školní nošení.',
       reseni:'Série batohů vycházející z trendů cílové skupiny. Design pracuje s materiály, barvami a detaily odpovídajícími věkové kategorii.',
       vysledek:'Kolekce navržená pro produkci s jasným zaměřením na teenagerského zákazníka.'
     }},
-  { sec:'design', img:'images/smartcat_collection.jpg',
+  { cats:['Produktový design'],
+    img:'images/smartcat_collection.jpg',
     title:'Teenage kolekce',
     detail:{
       vyzva:'Navrhnout kolekci doplňků pro teenagery navazující na batohovou řadu.',
       reseni:'Vizuálně konzistentní série produktů sdílející designový jazyk s batohovou kolekcí.',
       vysledek:'Konceptuální série dovedená do fáze prototypů.'
     }},
-  { sec:'design', img:'images/vecko_s01_c01_aa.jpg',
+  { cats:['Produktový design'],
+    img:'images/vecko_s01_c01_aa.jpg',
     title:'"véčko" koncept',
     detail:{
       vyzva:'Vlastní koncept mobilního telefonu s důrazem na ergonomii a nové ovládací paradigma.',
@@ -2132,25 +2127,25 @@ var CARDS=[
     }},
 
   // Architektura
-  { sec:'architektura', img:'images/domek.png',
+  { cats:['Architektura'],
+    img:'images/domek.png',
     title:'Domek',
     detail:{
       vyzva:'Navrhnout rodinný dům na svažitém pozemku s minimální zastavěnou plochou, přičemž každý kubický centimetr prostoru musí sloužit svému účelu.',
       reseni:'Dispozice reaguje na sklon terénu — obývací pokoj s knihovnou i ložnice jsou orientovány do údolí s výhledem přes velká okna. Vestavěný nábytek využívá každý dostupný prostor pro úložné řešení. Kuchyňská linka je prosvětlena širokým oknem, velká okna v obývacím pokoji zajišťují světlost i při minimálním půdorysu.',
       vysledek:'Kompaktní dům kde výhled do údolí a přirozené světlo vytváří pocit prostoru a klidu.'
     }},
-  { sec:'architektura', img:'images/domek- knihovna.png',   title:'Domek – knihovna' },
-  { sec:'architektura', img:'images/domek-kuchyn-satna.png', title:'Domek – kuchyň & šatna' },
-  { sec:'architektura', img:'images/domek-loznice.png',      title:'Domek – ložnice' },
+  { cats:['Design nábytku'], img:'images/domek- knihovna.png',    title:'Domek – knihovna' },
+  { cats:['Design nábytku'], img:'images/domek-kuchyn-satna.png', title:'Domek – kuchyň & šatna' },
+  { cats:['Design nábytku'], img:'images/domek-loznice.png',      title:'Domek – ložnice' },
 ];
 
 function buildCardFromData(data){
-  var sec=data.sec||'';
   var title=data.title||'';
-  var tl=title.toLowerCase();
   var imgSrc=data.img||'';
   var subtitle=data.subtitle||'';
   var isDetail=!!data.detail;
+  var cats=data.cats||[];
 
   var card=document.createElement('div'); card.className='mcard';
 
@@ -2158,7 +2153,6 @@ function buildCardFromData(data){
   var nahled=document.createElement('div'); nahled.className='nahled';
   var imgEl=document.createElement('img'); imgEl.src=imgSrc; imgEl.alt=title;
   nahled.appendChild(imgEl);
-  var cats=getCats(tl,sec);
   card.dataset.cats=cats.join('|');
   if(cats.length){
     var pw=document.createElement('div'); pw.className='pills-wrap';
