@@ -2201,7 +2201,7 @@ function buildCardFromData(data){
   }
   var ov=document.createElement('div'); ov.className='hover-overlay'; ov.innerHTML=EYE;
   nahled.appendChild(ov);
-  nahled.addEventListener('click',function(e){ e.preventDefault(); document.getElementById('lb-img').src=imgSrc; document.getElementById('lb').classList.add('open'); });
+  nahled.addEventListener('click',function(e){ e.preventDefault(); var lb=document.getElementById('lb'); lb.scrollTop=0; document.getElementById('lb-img').src=imgSrc; lb.classList.add('open'); });
   card.appendChild(nahled);
 
   // Title (+ chevron for detail cards)
