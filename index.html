@@ -2265,16 +2265,17 @@ window.addEventListener('load', function(){
 
   // ── 5. Apply URL param BEFORE building chips and Masonry ─────────────
   var urlCat=(new URLSearchParams(window.location.search)).get('cat');
-  var urlMatched=null;
   if(urlCat){
-    var norm=urlCat.toLowerCase().replace(/-/g,' ')
-      .replace('obalovy design','obalový design')
-      .replace('produktovy design','produktový design')
-      .replace('design nabytku','design nábytku')
-      .replace(/^ci$/,'corporate identity');
-    urlMatched=allCats.find(function(c){ return c.toLowerCase()===norm; })||null;
-    if(urlMatched){
-      allCats.forEach(function(c){ activeSet[c]=(c===urlMatched); });
+    var urlNorms=urlCat.split(',').map(function(s){
+      return s.trim().toLowerCase().replace(/-/g,' ')
+        .replace('obalovy design','obalový design')
+        .replace('produktovy design','produktový design')
+        .replace('design nabytku','design nábytku')
+        .replace(/^ci$/,'corporate identity');
+    });
+    var urlMatched=allCats.filter(function(c){ return urlNorms.indexOf(c.toLowerCase())!==-1; });
+    if(urlMatched.length){
+      allCats.forEach(function(c){ activeSet[c]=(urlMatched.indexOf(c)!==-1); });
     }
   }
 
