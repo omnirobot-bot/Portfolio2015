@@ -1353,7 +1353,7 @@ h5.centered { text-align: center; }
   align-items: flex-start; justify-content: center;
   overflow: auto; cursor: zoom-out;
   padding: 40px;
-  touch-action: pan-y;
+  touch-action: pan-y pinch-zoom;
 }
 body.lb-open { position: fixed; width: 100%; overflow-y: scroll; }
 #lb.open { display: flex; }
@@ -2008,7 +2008,9 @@ $(document).ready(function() { try {
 
 
 
-<!-- Lightbox -->
+</div><!-- /container -->
+
+<!-- Lightbox (outside .container so overflow-x:hidden doesn't affect touch events) -->
 <div id="lb"><img id="lb-img" src="" alt=""></div>
 
 <script>
