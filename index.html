@@ -63,6 +63,7 @@
 	body {
 		line-height: 1;
 	}
+	html, body { overflow-x: hidden; }
 	ol, ul {
 		list-style: none;
 	}
@@ -83,9 +84,9 @@
 	
 	body { background: none #5290C1; font-family: "Armata", "Helvetica Neue", "HelveticaNeue", Helvetica, Arial, "Lucida Grande", sans-serif; font-size: 11px; line-height: 1.1em; color: #fff; position: relative; -webkit-font-smoothing: antialiased; }
 	
-	.pozadi{ 
+	.pozadi{
 	min-height: 100%;
-	min-width: 768px;
+	min-width: 100%;
 	width: 100%;
 	height: auto;
 	position: fixed;
@@ -1349,17 +1350,21 @@ h5.centered { text-align: center; }
 
 /* ── Lightbox ── */
 #lb {
-  display: none; position: fixed; inset: 0;
+  display: none; position: fixed;
+  top: 0; left: 0; right: 0; bottom: 0;
   background: rgba(0,0,0,0.9); z-index: 9999;
   align-items: flex-start; justify-content: center;
   overflow: auto; cursor: zoom-out;
   padding: 40px;
+  touch-action: pan-y;
 }
+body.lb-open { position: fixed; width: 100%; overflow-y: scroll; }
 #lb.open { display: flex; }
 #lb img { max-width: none; max-height: none; border-radius: 4px; cursor: zoom-out; }
 @media (max-width: 768px) {
-  #lb { padding: 0; align-items: flex-start; }
-  #lb img { width: 100vw; height: auto; border-radius: 0; touch-action: pinch-zoom; }
+  #lb { padding: 0; }
+  #lb.open { display: block; overflow-y: auto; }
+  #lb img { display: block; width: 100vw; height: auto; border-radius: 0; touch-action: pinch-zoom; margin: 0; }
 }
 
 /* ── Responsive ── */
@@ -2011,6 +2016,7 @@ $(document).ready(function() { try {
 
 <script>
 (function(){
+var _lbScroll=0;
 var EYE='<svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>';
 var _doLayout=function(){};
 
@@ -2201,7 +2207,7 @@ function buildCardFromData(data){
   }
   var ov=document.createElement('div'); ov.className='hover-overlay'; ov.innerHTML=EYE;
   nahled.appendChild(ov);
-  nahled.addEventListener('click',function(e){ e.preventDefault(); var lb=document.getElementById('lb'); lb.scrollTop=0; document.getElementById('lb-img').src=imgSrc; lb.classList.add('open'); });
+  nahled.addEventListener('click',function(e){ e.preventDefault(); var lb=document.getElementById('lb'); document.getElementById('lb-img').src=imgSrc; lb.classList.add('open'); lb.scrollTop=0; _lbScroll=window.scrollY; document.body.style.top='-'+_lbScroll+'px'; document.body.classList.add('lb-open'); });
   card.appendChild(nahled);
 
   // Title (+ chevron for detail cards)
@@ -2443,8 +2449,9 @@ window.addEventListener('load', function(){
   });
 
   // ── 9. Lightbox ──────────────────────────────────────────────────────
-  document.getElementById('lb').addEventListener('click',function(){ this.classList.remove('open'); });
-  document.addEventListener('keydown',function(e){ if(e.key==='Escape') document.getElementById('lb').classList.remove('open'); });
+  function closeLb(){ document.getElementById('lb').classList.remove('open'); document.body.classList.remove('lb-open'); document.body.style.top=''; window.scrollTo(0,_lbScroll||0); }
+  document.getElementById('lb').addEventListener('click',closeLb);
+  document.addEventListener('keydown',function(e){ if(e.key==='Escape') closeLb(); });
 
 }); // end window.load
 })();
