@@ -1274,6 +1274,11 @@ h5.centered { text-align: center; }
   padding-bottom: 8px;
   border-bottom: 1px solid rgba(255,255,255,0.15);
 }
+/* Karta pouze s názvem (bez subtitlu ani detailu) — bez čáry */
+.mcard:not(.has-detail) h4:last-child {
+  border-bottom: none;
+  padding-bottom: 12px;
+}
 .mcard h5, .card-detail { margin-top: 8px; }
 .mcard h5 { margin: 0 12px 10px; font-size: 12px; line-height: 1.7; color: rgba(255,255,255,0.8); font-weight: normal; }
 .card-detail { padding: 0 12px 10px; }
@@ -1297,7 +1302,7 @@ h5.centered { text-align: center; }
   justify-content: space-between;
   align-items: center;
   border-bottom: none;
-  padding-bottom: 6px;
+  padding-bottom: 12px;
   cursor: pointer;
   user-select: none;
 }
@@ -2025,31 +2030,43 @@ var CARDS=[
       vysledek:'Prémiový packaging propojující estetiku s praktickým použitím.'
     }},
 
-  // Web
-  { cats:['Corporate Identity','Webdesign'],
-    img:'images/responsive_xbtc_02.jpg',
-    title:'XBTC.cz', subtitle:'Design/HTML5/CSS3',
+    
+  // Architektura
+  { cats:['Architektura'],
+    img:'images/domek.png',
+    title:'Domek',
     detail:{
-      vyzva:'Vizuální identita a webový koncept pro kryptoměnovou platformu.',
-      reseni:'Návrh loga a vizuálního jazyka webu jako základ pro budoucí rozvoj.',
-      vysledek:'Koncept převzatý interním týmem jako vizuální směřování platformy.'
+      vyzva:'Navrhnout rodinný dům na svažitém pozemku s minimální zastavěnou plochou, přičemž každý kubický centimetr prostoru musí sloužit svému účelu.',
+      reseni:'Dispozice reaguje na sklon terénu, obývací pokoj s knihovnou i ložnice jsou orientovány do údolí s výhledem přes velká okna. Vestavěný nábytek využívá každý dostupný prostor pro úložné řešení. Kuchyňská linka je prosvětlena širokým oknem, velká okna v obývacím pokoji zajišťují světlost i při minimálním půdorysu.',
+      vysledek:'Kompaktní dům kde výhled do údolí a přirozené světlo vytváří pocit prostoru a klidu.'
     }},
-  { cats:['Webdesign'],
-    img:'images/responsive_bread_gap_02.jpg',
-    title:'Bread Gap', subtitle:'Design/HTML5/CSS3',
+  { cats:['Design nábytku'],
+    img:'images/domek- knihovna.png',
+    title:'Knihovna',
     detail:{
-      vyzva:'První web značky Bread Gap s důrazem na atmosféru a rychlé spuštění.',
-      reseni:'Responzivní web s vlastním objednávacím systémem. Vizuální styl navazuje na papírové a kartonové materiály obalů.',
-      vysledek:'Web s objednávkovým systémem, který definoval digitální identitu značky.'
+      vyzva:'Vytvořit klidný kout určený ke čtení a odpočinku, oddělený od zbytku domu, ale přirozeně propojený s jeho atmosférou.',
+      reseni:'Sezení přímo v okně přináší výhled do krajiny a přirozené světlo ideální pro čtení. Vestavěná knihovna drží vše po ruce. Blízkost krbu dotváří atmosféru místa, kam se chce člověk vracet.',
+      vysledek:'Kout který plní jednu věc naplno, nabízí klid, světlo a důvod zpomalit.'
     }},
-  { cats:['Webdesign'],
-    img:'images/responsive_CP.jpg',
-    title:'Česká pozice aplikace', subtitle:'HTML5/CSS3',
+  { cats:['Design nábytku'],
+    img:'images/domek-kuchyn-satna.png',
+    title:'Kuchyň & šatna',
     detail:{
-      vyzva:'Responzivní čtecí aplikace pro zpravodajský web s podporou offline režimu.',
-      reseni:'Typografie, řádkování a bílý prostor jako klíčová UX rozhodnutí. Aplikace šla stáhnout do zařízení, uživatel si mohl přizpůsobit velikost písma.',
-      vysledek:'Pozitivní ohlas za čitelnost v době, kdy responzivní design nebyl samozřejmostí.'
+      vyzva:'Navrhnout kuchyni a šatnu v kompaktním prostoru rodinného domu, maximálně funkční, bez zbytečných kompromisů.',
+      reseni:'Kuchyňská linka je prosvětlena širokým oknem přímo u pracovní plochy. Trouba je osazena v ergonomické výšce, pohodlná práce bez ohýbání. Vestavěná skříň v šatně plně zakrývá rozvodnu podlahového vytápění a zároveň poskytuje plnohodnotný úložný prostor. Materiálová kombinace antracitu a dubu přináší moderní kontrast s příjemnou hřejivostí dřeva.',
+      vysledek:'Kuchyně i šatna kde každý detail má své místo, přehledné, funkční a vizuálně čisté.'
     }},
+  { cats:['Design nábytku'],
+    img:'images/domek-loznice.png',
+    title:'Ložnice',
+    detail:{
+      vyzva:'Navrhnout ložnici kde spánek, úložný prostor i osobní kout fungují v jednom.',
+      reseni:'Postel plynule přechází do stolu podél okna, přirozené místo pro práci nebo osobní záležitosti. Stůl nabízí i prostor pro případnou zabudovanou šperkovnici. Velkorysé úložné zásuvky jsou skryté pod postelí. Police vedené nad oknem využívají prostor, který by jinak zůstal prázdný.',
+      vysledek:'Ložnice která toho pojme víc, než by se zdálo, a přitom působí čistě.'
+    }},
+
+ 
+
 
   // Design — obalový
   { cats:['Obalový design'],
@@ -2078,7 +2095,7 @@ var CARDS=[
       reseni:'Obal obsahoval tričko jako součást produktového zážitku. Vizuální zpracování vychází z tehdejší globální Boost kampaně a vytváří s ní přímou vazbu.',
       vysledek:'Konceptuální obalový set propojující produkt, kampaň a zákaznický zážitek.'
     }},
-
+ 
   // Design — nábytek / produkt
   { cats:['Design nábytku'],
     img:'images/Spiderman_furniture.jpg',
@@ -2129,18 +2146,34 @@ var CARDS=[
       vysledek:'Osobní produktový koncept předjímající směřování mobilního designu k ergonomii.'
     }},
 
-  // Architektura
-  { cats:['Architektura'],
-    img:'images/domek.png',
-    title:'Domek',
+
+  
+  // Web
+  { cats:['Corporate Identity','Webdesign'],
+    img:'images/responsive_xbtc_02.jpg',
+    title:'XBTC.cz', subtitle:'Design/HTML5/CSS3',
     detail:{
-      vyzva:'Navrhnout rodinný dům na svažitém pozemku s minimální zastavěnou plochou, přičemž každý kubický centimetr prostoru musí sloužit svému účelu.',
-      reseni:'Dispozice reaguje na sklon terénu — obývací pokoj s knihovnou i ložnice jsou orientovány do údolí s výhledem přes velká okna. Vestavěný nábytek využívá každý dostupný prostor pro úložné řešení. Kuchyňská linka je prosvětlena širokým oknem, velká okna v obývacím pokoji zajišťují světlost i při minimálním půdorysu.',
-      vysledek:'Kompaktní dům kde výhled do údolí a přirozené světlo vytváří pocit prostoru a klidu.'
+      vyzva:'Vizuální identita a webový koncept pro kryptoměnovou platformu.',
+      reseni:'Návrh loga a vizuálního jazyka webu jako základ pro budoucí rozvoj.',
+      vysledek:'Koncept převzatý interním týmem jako vizuální směřování platformy.'
     }},
-  { cats:['Design nábytku'], img:'images/domek- knihovna.png',    title:'Domek – knihovna' },
-  { cats:['Design nábytku'], img:'images/domek-kuchyn-satna.png', title:'Domek – kuchyň & šatna' },
-  { cats:['Design nábytku'], img:'images/domek-loznice.png',      title:'Domek – ložnice' },
+  { cats:['Webdesign'],
+    img:'images/responsive_bread_gap_02.jpg',
+    title:'Bread Gap', subtitle:'Design/HTML5/CSS3',
+    detail:{
+      vyzva:'První web značky Bread Gap s důrazem na atmosféru a rychlé spuštění.',
+      reseni:'Responzivní web s vlastním objednávacím systémem. Vizuální styl navazuje na papírové a kartonové materiály obalů.',
+      vysledek:'Web s objednávkovým systémem, který definoval digitální identitu značky.'
+    }},
+  { cats:['Webdesign'],
+    img:'images/responsive_CP.jpg',
+    title:'Česká pozice aplikace', subtitle:'HTML5/CSS3',
+    detail:{
+      vyzva:'Responzivní čtecí aplikace pro zpravodajský web s podporou offline režimu.',
+      reseni:'Typografie, řádkování a bílý prostor jako klíčová UX rozhodnutí. Aplikace šla stáhnout do zařízení, uživatel si mohl přizpůsobit velikost písma.',
+      vysledek:'Pozitivní ohlas za čitelnost v době, kdy responzivní design nebyl samozřejmostí.'
+    }},
+
 ];
 
 function buildCardFromData(data){
@@ -2223,7 +2256,7 @@ window.addEventListener('load', function(){
   flat.querySelectorAll('.mcard').forEach(function(c){
     (c.dataset.cats||'').split('|').forEach(function(cat){ if(cat) allCatSet[cat]=1; });
   });
-  var chipOrder=['Corporate Identity','Obalový design','Produktový design','Design nábytku','Webdesign','Architektura'];
+  var chipOrder=['Corporate Identity','Obalový design','Produktový design','Design nábytku','Architektura','Webdesign'];
   var allCats=chipOrder.filter(function(c){ return allCatSet[c]; });
 
   // ── 4. activeSet: all ON by default ─────────────────────────────────
